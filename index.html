@@ -2562,7 +2562,7 @@ function closePopup() {
   resize();
   window.addEventListener('resize', resize);
 
-  var nodes = Array.from({ length: 80 }, function(){
+  var nodes = Array.from({ length: 131 }, function(){
     return {
       x: Math.random() * window.innerWidth,
       y: Math.random() * window.innerHeight,
@@ -2584,7 +2584,7 @@ function closePopup() {
     var sy = (t * 0.3) % H;
     var sg = ctx.createLinearGradient(0, sy - 40, 0, sy + 40);
     sg.addColorStop(0, 'transparent');
-    sg.addColorStop(0.5, 'rgba(0,212,255,0.025)');
+    sg.addColorStop(0.5, 'rgba(255,0,0,0.025)'); // Updated scanline to match red tone
     sg.addColorStop(1, 'transparent');
     ctx.fillStyle = sg;
     ctx.fillRect(0, sy - 40, W, 80);
@@ -2601,7 +2601,8 @@ function closePopup() {
         var dSq = dx * dx + dy * dy;
         if (dSq < LINK_DIST_SQ){
           var d = Math.sqrt(dSq);
-          ctx.strokeStyle = 'rgba(0,140,190,' + (0.55 * (1 - d / LINK_DIST)) + ')';
+          // Changed connecting lines (webs) to red
+          ctx.strokeStyle = 'rgba(255,0,0,' + (0.55 * (1 - d / LINK_DIST)) + ')';
           ctx.lineWidth = 1;
           ctx.beginPath();
           ctx.moveTo(nodes[i].x, nodes[i].y);
@@ -2613,7 +2614,8 @@ function closePopup() {
 
     nodes.forEach(function(n){
       var g = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, n.r * 3);
-      g.addColorStop(0, 'rgba(0,212,255,0.8)');
+      // Changed particle dots to red
+      g.addColorStop(0, 'rgba(255,0,0,0.8)');
       g.addColorStop(1, 'transparent');
       ctx.fillStyle = g;
       ctx.beginPath();
