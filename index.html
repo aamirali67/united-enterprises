@@ -403,109 +403,8 @@
     display:flex;
     gap:16px;
     flex-wrap:wrap;
-    margin-bottom:18px;
+    margin-bottom:46px;
   }
-
-  /* ---- WhatsApp query note + connector arrow ---- */
-  .wa-note-wrap{
-    display:flex;
-    align-items:stretch;
-    gap:10px;
-    max-width:420px;
-    margin-bottom:28px;
-  }
-  .wa-arrow{
-    flex:0 0 42px;
-    width:42px;
-    display:block;
-    color:#00ff9d;
-    filter: drop-shadow(0 0 6px rgba(0,255,157,0.75)) drop-shadow(0 0 16px rgba(0,255,157,0.4));
-    overflow:visible;
-  }
-  .wa-arrow .wa-arrow-path{
-    stroke-dasharray: 4 8;
-    stroke-linecap: round;
-    stroke-dashoffset: 0;
-    animation: waMarch 1.4s linear infinite;
-  }
-  .wa-arrow .wa-arrow-head{
-    opacity:1;
-    filter: drop-shadow(0 0 5px rgba(0,255,157,0.85));
-    animation: waHeadPulse 1.4s ease-in-out infinite;
-  }
-  @keyframes waMarch{ to{ stroke-dashoffset: -24; } }
-  @keyframes waHeadPulse{ 0%,100%{ opacity:.75; } 50%{ opacity:1; } }
-
-  .wa-note{
-    position:relative;
-    flex:1 1 auto;
-    padding:8px 12px;
-    border-radius:10px;
-    background:
-      linear-gradient(180deg, rgba(10,24,38,0.92), rgba(6,14,24,0.92));
-    border:1px solid rgba(34,211,238,0.35);
-    box-shadow:
-      0 0 0 1px rgba(34,211,238,0.06),
-      0 8px 28px -10px rgba(34,211,238,0.55),
-      inset 0 1px 0 rgba(255,255,255,0.05);
-    overflow:hidden;
-    isolation:isolate;
-  }
-  .wa-note::before{
-    content:"";
-    position:absolute;
-    inset:-1px;
-    border-radius:inherit;
-    padding:1px;
-    background:linear-gradient(120deg, rgba(34,211,238,0.9), rgba(125,178,255,0.25) 40%, rgba(37,211,102,0.85));
-    -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-    -webkit-mask-composite:xor;
-            mask-composite:exclude;
-    opacity:0.85;
-    pointer-events:none;
-  }
-  .wa-note::after{
-    content:"";
-    position:absolute;
-    left:-40%;
-    top:0;
-    width:35%;
-    height:100%;
-    background:linear-gradient(100deg, transparent, rgba(255,255,255,0.10), transparent);
-    animation: waSweep 4.5s ease-in-out infinite;
-    pointer-events:none;
-  }
-  @keyframes waSweep{
-    0%{ left:-40%; }
-    55%,100%{ left:120%; }
-  }
-  .wa-note-inner{
-    position:relative;
-    z-index:1;
-    display:flex;
-    align-items:center;
-    gap:0;
-  }
-  .wa-note-text{
-    font-family:'JetBrains Mono', monospace;
-    font-size:0.64rem;
-    letter-spacing:0.07em;
-    line-height:1.35;
-    text-transform:uppercase;
-    color:#dff6ff;
-  }
-  .wa-note-text b{
-    color:#25d366;
-    font-weight:700;
-  }
-
-  @media (max-width:700px){
-    .wa-note-wrap{ gap:8px; max-width:340px; margin-bottom:22px; }
-    .wa-arrow{ flex-basis:30px; width:30px; }
-    .wa-note{ padding:7px 10px; border-radius:8px; }
-    .wa-note-text{ font-size:0.58rem; letter-spacing:0.06em; }
-  }
-
 
   .btn{
     display:inline-flex;
@@ -1196,18 +1095,6 @@
         </a>
         <a class="btn btn-ghost" href="#products">View Product Line ↓</a>
       </div>
-      <div class="wa-note-wrap">
-        <svg class="wa-arrow" viewBox="0 0 42 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path class="wa-arrow-path" d="M9 2 C9 68, 9 98, 29 98" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-          <path class="wa-arrow-head" d="M22 91 L30 98 L22 105" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        </svg>
-        <div class="wa-note">
-          <div class="wa-note-inner">
-            <p class="wa-note-text">This form is aimed to send a query through <b>WhatsApp</b> chat.</p>
-          </div>
-        </div>
-      </div>
-
       <div class="hero-tags">
         <span class="tag">Grade <em>SS 316</em></span>
         <span class="tag">Sizes <em>1/2" – 1"</em></span>
