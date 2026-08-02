@@ -1050,129 +1050,249 @@
             font-family: 'Share Tech Mono', monospace;
         }
 
-        /* Full-screen overlay to block out the website behind it */
+/* =========================================================
+           RETRO MINIMALIST TECH POPUP (INDIGO + ORANGE - CLEAN)
+           ========================================================= */
+
+        /* Retro Dark Indigo Overlay */
         .cyber-overlay {
             position: fixed;
-            top: 0;
-            left: 0;
+            inset: 0;
             width: 100vw;
             height: 100vh;
-            background: rgba(5, 5, 10, 0.85);
+            background: rgba(10, 11, 22, 0.88);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 9999;
-            backdrop-filter: blur(4px);
+            padding: 20px;
+            animation: retroFadeIn 0.25s cubic-bezier(0, 0, 0.2, 1) forwards;
         }
 
-        /* The main popup container */
-        .cyber-popup {
+        @keyframes retroFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Minimalist Retro Card with Solid Dark Background */
+        .retro-tech-card {
             position: relative;
-            background: #050505;
-            border: 2px solid #00f3ff;
-            padding: 40px;
-            max-width: 450px;
-            text-align: center;
-            /* Outer and inner neon glow */
-            box-shadow: 0 0 15px rgba(0, 243, 255, 0.3), inset 0 0 20px rgba(0, 243, 255, 0.1);
-            /* Slices off the bottom right corner for a futuristic look */
-            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 25px), calc(100% - 25px) 100%, 0 100%);
+            width: 100%;
+            max-width: 440px;
+            background: #0e101f;
+            border: 2px solid #ff6b00;
+            border-radius: 4px;
+            box-shadow: 8px 8px 0px #6366f1, 0 20px 50px rgba(0, 0, 0, 0.85);
+            overflow: hidden;
+            animation: retroPopIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
         }
 
-        /* Decorative bottom-right neon accent */
-        .cyber-popup::before {
-            content: '';
+        @keyframes retroPopIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        /* Top Marquee Ticker Bar - Vivid Electric Orange */
+        .retro-ticker-bar {
+            background: #ff6b00;
+            color: #0e101f;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 6px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            border-bottom: 2px solid #ff6b00;
+            display: flex;
+        }
+
+        .ticker-content {
+            display: inline-block;
+            animation: tickerMove 12s linear infinite;
+        }
+
+        @keyframes tickerMove {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Close Button */
+        .retro-close-btn {
             position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 25px;
-            height: 25px;
-            background: #00f3ff;
-        }
-
-        /* Text styling with a chromatic aberration/glitch shadow */
-        .cyber-text {
-            color: #e0e0e0;
-            font-size: 1.3rem;
-            line-height: 1.5;
-            margin-bottom: 35px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            text-shadow: 2px 0px 4px rgba(255, 0, 60, 0.7), -2px 0px 4px rgba(0, 243, 255, 0.7);
-        }
-
-        /* Highlight specific words */
-        .highlight {
-            color: #fcee0a; /* Cyber yellow */
-            font-weight: bold;
-            text-shadow: 0 0 10px rgba(252, 238, 10, 0.5);
-        }
-
-        /* Cyberpunk Button */
-        .cyber-btn {
-            background: #ff003c; /* Hot pink/red */
-            color: #fff;
-            border: none;
-            padding: 15px 30px;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 1.1rem;
-            font-weight: bold;
-            text-transform: uppercase;
+            top: 28px;
+            right: 16px;
+            background: #0e101f;
+            border: 2px solid #ff6b00;
+            color: #ff6b00;
+            width: 30px;
+            height: 30px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            font-weight: 700;
             cursor: pointer;
-            letter-spacing: 2px;
-            transition: all 0.2s ease-in-out;
-            /* Angled corners on the button */
-            clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
-        }
-
-        /* Button Hover Effect */
-        .cyber-btn:hover {
-            background: #fcee0a;
-            color: #050505;
-            text-shadow: none;
-            box-shadow: 0 0 15px #fcee0a;
-        }
-.cyber-close-btn {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: transparent;
-            border: 1px solid #00f3ff;
-            color: #00f3ff;
-            width: 32px;
-            height: 32px;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 1.2rem;
-            font-weight: bold;
             display: flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
-            transition: all 0.2s ease-in-out;
-            /* Angled corners for the close button too */
-            clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
+            box-shadow: 3px 3px 0px #6366f1;
+            transition: all 0.15s ease;
+            z-index: 10;
         }
 
-        .cyber-close-btn:hover {
-            background: #ff003c;
-            border-color: #ff003c;
-            color: #fff;
-            box-shadow: 0 0 10px #ff003c;
+        .retro-close-btn:hover {
+            background: #FFFF00;
+            color: #0e101f;
+            box-shadow: 0px 0px 0px transparent;
+            transform: translate(3px, 3px);
+        }
+
+        /* Inner Body */
+        .retro-body {
+            padding: 28px 24px 24px;
+        }
+
+        /* Status Badge */
+        .retro-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 10px;
+            background: rgba(99, 102, 241, 0.12);
+            border: 1px solid #818cf8;
+            color: #818cf8;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            box-shadow: 2px 2px 0px #ff6b00;
+        }
+
+        .blinking-cursor {
+            display: inline-block;
+            width: 7px;
+            height: 12px;
+            background: #ff6b00;
+            animation: retroBlink 1s infinite steps(2, start);
+        }
+
+        @keyframes retroBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Title & Text */
+        .retro-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0 0 12px 0;
+            letter-spacing: -0.02em;
+            line-height: 1.25;
+        }
+
+        .retro-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.92rem;
+            line-height: 1.6;
+            color: #a5b4fc;
+            margin: 0 0 24px 0;
+        }
+
+        .retro-text strong {
+            color: #ff6b00;
+            font-weight: 600;
+        }
+
+        /* Flashy Action Button */
+        .retro-action-btn {
+            width: 100%;
+            background: #ff6b00;
+            border: 2px solid #ff6b00;
+            color: #0e101f;
+            font-family: "Lucida Console", Monaco, monospace;
+            font-size: 0.88rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 14px 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 5px 5px 0px #6366f1;
+            transition: all 0.12s ease-in-out;
+        }
+
+        .retro-action-btn:hover {
+            background: #FFFF00;
+            border-color: #6366f1;
+            color: #ffffff;
+            box-shadow: 7px 7px 0px #ff6b00;
+            transform: translate(-2px, -2px);
+        }
+
+        .retro-action-btn:active {
+            box-shadow: 0px 0px 0px transparent;
+            transform: translate(5px, 5px);
+        }
+
+        .retro-action-btn svg {
+            transition: transform 0.2s ease;
+        }
+
+        .retro-action-btn:hover svg {
+            transform: translateX(4px);
         }
 </style>
 </head>
 <body>
 <div class="cyber-overlay" id="popupOverlay">
-    <div class="cyber-popup">
-        <button class="cyber-close-btn" onclick="closePopup()" title="Close">&times;</button>
+    <div class="retro-tech-card">
         
-        <div class="cyber-text">
-            This form is aimed to send your query through <span class="highlight">WHATSAPP</span>
+        <div class="retro-ticker-bar">
+            <div class="ticker-content">
+                UNITED ENTERPRISES GROUP &nbsp;•&nbsp; SS316 HIGH-PRESSURE FITTINGS &nbsp;•&nbsp; TECHNICAL INQUIRY &nbsp;•&nbsp; FAST RESPONSE &nbsp;•&nbsp;&nbsp;
+            </div>
+            <div class="ticker-content" aria-hidden="true">
+                UNITED ENTERPRISES GROUP &nbsp;•&nbsp; SS316 HIGH-PRESSURE FITTINGS &nbsp;•&nbsp; TECHNICAL INQUIRY &nbsp;•&nbsp; FAST RESPONSE &nbsp;•&nbsp;&nbsp;
+            </div>
         </div>
-        <button class="cyber-btn" onclick="handleAction()">Fill up inquiry form</button>
+
+        <button class="retro-close-btn" onclick="closePopup()" aria-label="Close Modal">✕</button>
+
+        <div class="retro-body">
+            
+            <div class="retro-badge">
+                <span class="blinking-cursor"></span>
+                <span>UNITED ENTERPRISES GROUP</span>
+            </div>
+
+            <h2 class="retro-title">High-Pressure Systems Technical Support</h2>
+            
+            <p class="retro-text">
+                Need immediate pricing or specs for SS316 tube fittings and valves? Connect directly with our engineering team via <strong>filling up our form</strong>.
+            </p>
+
+            <button class="retro-action-btn" onclick="handleAction()">
+                <span>Fill up inquiry form</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+
+        </div>
     </div>
 </div>
-
 <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
 <nav>
