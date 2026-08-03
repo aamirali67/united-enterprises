@@ -4,17 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SS316 High-Pressure Connectors & Quick Couplers | United Enterprises Group</title>
-<meta name="title" content="SS316 High-Pressure Connectors &amp; Quick Couplers | United Enterprises Group">
-<meta name="description" content="High-pressure SS316 stainless steel male/female NPT tube connectors and quick-connect couplers rated up to 10,000 PSI. Double ferrule compression fittings for CNG refueling, hydraulic skid systems, and industrial fluid pipelines in Nigeria.">
-<meta name="keywords" content="SS316 male connector, quick connect coupler, double ferrule tube connector, NPT male adapter Nigeria, CNG quick coupler, high pressure hydraulic coupler, Swagelok type connector supplier">
+<title>Interactive SS316 High-Pressure Connectors & Quick Couplers | United Enterprises Group</title>
+<meta name="title" content="SS316 High-Pressure Connectors & Quick Couplers | United Enterprises Group">
+<meta name="description" content="Interactive 3D blueprint visualizer for SS316 stainless steel high-pressure tube connectors and quick-connect couplers rated up to 10,000 PSI. Double ferrule compression fittings for CNG refueling, hydraulic skids, and industrial pipelines.">
+<meta name="keywords" content="SS316 male connector, quick connect coupler, double ferrule tube connector, interactive blueprint fitting, CNG quick coupler, high pressure hydraulic coupler">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://unitedengineersgroup.work.gd/connectors-couplers.html">
 
 <meta property="og:type" content="product">
 <meta property="og:site_name" content="United Enterprises Group">
 <meta property="og:title" content="SS316 High-Pressure Connectors & Quick-Connect Couplers">
-<meta property="og:description" content="Precision-machined SS316 male connectors & quick-disconnect hydraulic couplers rated up to 10,000 PSI with zero-leak FKM/PTFE seals.">
+<meta property="og:description" content="Interactive SS316 male connectors & quick-disconnect hydraulic couplers rated up to 10,000 PSI with zero-leak FKM/PTFE seals.">
 
 <script type="application/ld+json">
 {
@@ -41,12 +41,14 @@
     --bg-void: #020408;
     --panel-cyber: #090d16;
     --panel-matte: #0e1320;
-    --border-dim: rgba(0, 240, 255, 0.12);
+    --border-dim: rgba(0, 240, 255, 0.15);
     --border-bright: #00f0ff;
     
     --cyan: #00f0ff;
-    --cyan-glow: rgba(0, 240, 255, 0.25);
+    --cyan-glow: rgba(0, 240, 255, 0.35);
     --orange: #ff5533;
+    --orange-glow: rgba(255, 85, 51, 0.4);
+    --green: #00ff88;
     
     --text-primary: #e6f1ff;
     --text-dim: #607b96;
@@ -76,16 +78,16 @@
     background-size: 100% 4px;
     z-index: 99;
     pointer-events: none;
-    opacity: 0.6;
+    opacity: 0.5;
   }
 
-  /* Top Navigation Header */
+  /* Navigation Header */
   .site-header {
     position: fixed;
     top: 0; left: 0; width: 100%;
     z-index: 100;
-    background: rgba(2, 4, 8, 0.85);
-    backdrop-filter: blur(8px);
+    background: rgba(2, 4, 8, 0.9);
+    backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-dim);
     padding: 16px 5vw;
     display: flex;
@@ -112,10 +114,23 @@
     color: var(--cyan);
     background: rgba(0, 240, 255, 0.08);
     border: 1px solid var(--border-dim);
-    padding: 4px 8px;
+    padding: 4px 10px;
     border-radius: 2px;
     letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
+
+  .status-dot {
+    width: 6px; height: 6px;
+    background: var(--green);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--green);
+    animation: blink 1.5s infinite alternate;
+  }
+
+  @keyframes blink { 0% { opacity: 0.3; } 100% { opacity: 1; } }
 
   .back-btn {
     font-family: 'JetBrains Mono', monospace;
@@ -128,30 +143,32 @@
 
   /* Main Container Layout */
   .cyber-wrapper {
-    max-width: 1350px;
-    margin: 110px auto 60px;
-    padding: 0 4vw;
+    max-width: 1400px;
+    margin: 100px auto 60px;
+    padding: 0 3vw;
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 40px;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 35px;
   }
 
-  @media (max-width: 968px) {
+  @media (max-width: 1024px) {
     .cyber-wrapper { grid-template-columns: 1fr; margin-top: 80px; }
   }
 
-  /* Left: Cyber Visualizer Stage */
+  /* Left: Hologram Viewport Stage */
   .viewport-stage {
     background: var(--panel-cyber);
     border: 1px solid var(--border-dim);
     border-radius: 4px;
     position: relative;
-    padding: 40px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 520px;
+    min-height: 560px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    perspective: 1000px;
+    overflow: hidden;
   }
 
   .corner-bracket {
@@ -159,6 +176,7 @@
     width: 12px; height: 12px;
     border-color: var(--cyan);
     border-style: solid;
+    pointer-events: none;
   }
   .cb-tl { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
   .cb-tr { top: -1px; right: -1px; border-width: 2px 2px 0 0; }
@@ -171,59 +189,128 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.75rem;
     color: var(--text-dim);
+    z-index: 5;
   }
 
-  /* SVG Render Area */
-  .tube-render-area {
+  /* SVG Interactive Blueprint Canvas */
+  .hologram-container {
     position: relative;
     width: 100%;
-    height: 300px;
+    height: 330px;
     margin: auto 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.15s ease-out;
+    transform-style: preserve-3d;
   }
 
   .svg-blueprint {
     width: 100%;
-    max-width: 440px;
+    max-width: 480px;
     height: auto;
-    filter: drop-shadow(0 0 12px rgba(0, 240, 255, 0.2));
+    filter: drop-shadow(0 0 15px rgba(0, 240, 255, 0.25));
   }
 
+  /* Hologram Part Interactivity */
+  .part-node {
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .part-node:hover, .part-node.active-part {
+    stroke: var(--orange) !important;
+    fill: rgba(255, 85, 51, 0.25) !important;
+    filter: drop-shadow(0 0 10px var(--orange));
+  }
+
+  /* Exploded View Animations */
+  .exploded .nut-group { transform: translateX(-40px); transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .exploded .ferrules-group { transform: translateX(-20px); transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .exploded .body-group { transform: translateX(0px); transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .exploded .port-b-group { transform: translateX(40px); transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
+
+  .nut-group, .ferrules-group, .body-group, .port-b-group { transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
+
+  /* Hologram Scanner Line */
   .laser-scanner {
     position: absolute;
-    top: 10px; bottom: 10px;
+    top: 5px; bottom: 5px;
     width: 2px;
-    background: var(--orange);
-    box-shadow: 0 0 12px var(--orange);
-    animation: scanAnimation 3.5s infinite ease-in-out;
+    background: var(--cyan);
+    box-shadow: 0 0 15px var(--cyan);
+    animation: scanAnimation 4s infinite ease-in-out;
+    pointer-events: none;
+    opacity: 0.7;
   }
 
   @keyframes scanAnimation {
-    0% { left: 10%; opacity: 0; }
-    15% { opacity: 1; }
-    85% { opacity: 1; }
-    100% { left: 90%; opacity: 0; }
+    0% { left: 5%; opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { left: 95%; opacity: 0.2; }
   }
 
-  .measure-line {
-    position: absolute;
-    bottom: -10px; left: 0; width: 100%;
-    border-bottom: 1px dashed var(--text-dim);
+  /* Flow Vector Animation */
+  .flow-line {
+    stroke-dasharray: 8, 6;
+    animation: flowMove 1s linear infinite;
+    display: none;
+  }
+  .flow-active .flow-line { display: block; }
+
+  @keyframes flowMove {
+    0% { stroke-dashoffset: 28; }
+    100% { stroke-dashoffset: 0; }
+  }
+
+  /* Controls Overlay Bar */
+  .holo-toolbar {
     display: flex;
-    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+    z-index: 10;
+  }
+
+  .tool-btn {
+    background: var(--panel-matte);
+    border: 1px solid var(--border-dim);
+    color: var(--text-primary);
+    padding: 6px 12px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.7rem;
-    color: var(--cyan);
-    padding-top: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
   }
 
-  /* Right Side: Technical Specs */
+  .tool-btn:hover, .tool-btn.active-tool {
+    background: rgba(0, 240, 255, 0.15);
+    border-color: var(--cyan);
+    color: var(--cyan);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+  }
+
+  /* Live Telemetry Display Popover */
+  .part-telemetry {
+    background: rgba(9, 13, 22, 0.95);
+    border: 1px solid var(--orange);
+    padding: 10px 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-primary);
+    box-shadow: 0 0 20px rgba(255, 85, 51, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 44px;
+  }
+
+  .telemetry-title { color: var(--orange); font-weight: 700; }
+  .telemetry-desc { color: var(--text-dim); }
+
+  /* Right Side: Technical Specs & Controls */
   .details-stage {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 22px;
   }
 
   .sys-id {
@@ -235,7 +322,7 @@
 
   .cyber-title {
     font-family: 'Orbitron', sans-serif;
-    font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
     font-weight: 900;
     text-transform: uppercase;
     line-height: 1.1;
@@ -244,7 +331,7 @@
 
   .cyber-desc {
     color: var(--text-dim);
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 1.6;
     font-weight: 300;
   }
@@ -259,7 +346,7 @@
 
   .type-switchers {
     display: flex;
-    gap: 12px;
+    gap: 10px;
   }
 
   .type-btn {
@@ -270,7 +357,7 @@
     padding: 12px;
     font-family: 'JetBrains Mono', monospace;
     font-weight: 700;
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     cursor: pointer;
     transition: all 0.2s;
     text-align: center;
@@ -287,19 +374,18 @@
   .hud-metrics {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-top: 10px;
+    gap: 10px;
   }
 
   .metric-card {
     background: var(--panel-matte);
     border: 1px solid var(--border-dim);
-    padding: 14px 18px;
+    padding: 12px 16px;
   }
 
   .metric-card .title {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.68rem;
+    font-size: 0.65rem;
     color: var(--text-dim);
     text-transform: uppercase;
   }
@@ -314,13 +400,13 @@
 
   .action-block {
     display: flex;
-    gap: 16px;
-    margin-top: 10px;
+    gap: 14px;
+    margin-top: 5px;
   }
 
   .cyber-btn {
     flex: 1;
-    padding: 16px;
+    padding: 15px;
     font-family: 'Orbitron', sans-serif;
     font-size: 0.85rem;
     font-weight: 800;
@@ -353,7 +439,7 @@
 
   footer {
     border-top: 1px solid var(--border-dim);
-    padding: 24px 5vw;
+    padding: 20px 5vw;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.75rem;
     color: var(--text-muted);
@@ -369,42 +455,54 @@
 
   <header class="site-header">
     <div class="nav-logo">
-      UEG <span>//</span> SPEC-PAGE
+	<img src="logocompany.png" alt="United Enterprises Logo">
+      United Enterprises Group <span>|</span> Product specifications interactive display
     </div>
-    <div class="status-tag">SYSTEM OK // SS316</div>
-    <a href="index.html" class="back-btn">[ ESC ] RETURN TO SYSTEM DIRECTORY</a>
+    <a href="index.html" class="back-btn">Back</a>
   </header>
 
   <main class="cyber-wrapper">
     
-    <div class="viewport-stage">
+    <div class="viewport-stage" id="viewportStage">
       <div class="corner-bracket cb-tl"></div>
       <div class="corner-bracket cb-tr"></div>
       <div class="corner-bracket cb-bl"></div>
       <div class="corner-bracket cb-br"></div>
 
       <div class="hud-header">
-        <span id="drawingId">DRAWING ID: MC-NPT-316</span>
-        <span>SCALE: 1:1 CYBER RENDER</span>
+        <span id="drawingId"></span>
+        <span></span>
       </div>
 
-      <div class="tube-render-area">
-        <div class="laser-scanner"></div>
+      <div class="hologram-container" id="holoContainer">
+        <div class="laser-scanner" id="laserScanner"></div>
 
-        <svg class="svg-blueprint" viewBox="0 0 380 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M 140 75 L 240 75 L 255 110 L 240 145 L 140 145 L 125 110 Z" fill="#090d16" stroke="#00f0ff" stroke-width="2"/>
-          <line x1="140" y1="75" x2="140" y2="145" stroke="#00f0ff" stroke-width="1.2" opacity="0.6"/>
-          <line x1="240" y1="75" x2="240" y2="145" stroke="#00f0ff" stroke-width="1.2" opacity="0.6"/>
+        <svg class="svg-blueprint" id="svgBlueprint" viewBox="0 0 380 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+          
+          <line class="flow-line" x1="10" y1="110" x2="370" y2="110" stroke="#ff5533" stroke-width="4"/>
 
-          <rect x="60" y="85" width="65" height="50" fill="rgba(0,240,255,0.05)" stroke="#00f0ff" stroke-width="1.5"/>
-          <path d="M 125 80 L 105 88 L 105 132 L 125 140 Z" fill="#090d16" stroke="#00f0ff" stroke-width="1.8"/>
+          <g class="nut-group part-node" onclick="inspectPart('NUT')" data-title="COMPRESSION NUT" data-desc="Precision machined SS316 hex nut with silver-plated internal threads to prevent galling.">
+            <rect x="60" y="85" width="65" height="50" fill="rgba(0,240,255,0.06)" stroke="#00f0ff" stroke-width="1.5"/>
+            <path d="M 125 80 L 105 88 L 105 132 L 125 140 Z" fill="#090d16" stroke="#00f0ff" stroke-width="1.8"/>
+            <text x="80" y="114" fill="#00f0ff" font-family="JetBrains Mono" font-size="8" opacity="0.7">NUT</text>
+          </g>
 
-          <polygon points="100,90 108,90 100,110" fill="#ff5533"/>
-          <polygon points="100,130 108,130 100,110" fill="#ff5533"/>
+          <g class="ferrules-group part-node" onclick="inspectPart('FERRULES')" data-title="DOUBLE FERRULE SYSTEM" data-desc="Front ferrule creates pressure-tight seal; rear ferrule provides high mechanical tube grip against vibration.">
+            <polygon points="100,90 108,90 100,110" fill="#ff5533" stroke="#ff5533" stroke-width="0.5"/>
+            <polygon points="100,130 108,130 100,110" fill="#ff5533" stroke="#ff5533" stroke-width="0.5"/>
+            <polygon points="92,90 99,90 95,108" fill="#00f0ff"/>
+            <polygon points="92,130 99,130 95,112" fill="#00f0ff"/>
+          </g>
 
-          <line x1="10" y1="110" x2="60" y2="110" stroke="#00f0ff" stroke-width="3" stroke-dasharray="8 4"/>
+          <g class="body-group part-node" onclick="inspectPart('BODY')" data-title="SS316 HEX BODY" data-desc="Heavy-wall barstock SS316 body built to withstand extreme shock pressures & thermal cycling up to 648°C.">
+            <path d="M 140 75 L 240 75 L 255 110 L 240 145 L 140 145 L 125 110 Z" fill="#090d16" stroke="#00f0ff" stroke-width="2"/>
+            <line x1="140" y1="75" x2="140" y2="145" stroke="#00f0ff" stroke-width="1" opacity="0.5"/>
+            <line x1="240" y1="75" x2="240" y2="145" stroke="#00f0ff" stroke-width="1" opacity="0.5"/>
+            <rect x="125" y="103" x2="255" y="117" width="130" height="14" fill="rgba(0,240,255,0.12)" stroke="#00f0ff" stroke-width="0.8" stroke-dasharray="2 2"/>
+            <text x="170" y="114" fill="#00f0ff" font-family="Orbitron" font-size="7" font-weight="700">BORE</text>
+          </g>
 
-          <g id="rightNptGroup">
+          <g class="port-b-group part-node" id="rightNptGroup" onclick="inspectPart('THREAD')" data-title="MALE NPT THREAD PORT" data-desc="Tapered ANSI B1.20.1 NPT threads engineered for liquid-tight hydraulic & high-pressure gas joints.">
             <path d="M 255 88 L 330 93 L 330 127 L 255 132 Z" fill="#090d16" stroke="#00f0ff" stroke-width="1.8"/>
             <line x1="270" y1="87" x2="270" y2="133" stroke="#00f0ff" stroke-width="1.5"/>
             <line x1="285" y1="88" x2="285" y2="132" stroke="#00f0ff" stroke-width="1.5"/>
@@ -412,41 +510,44 @@
             <line x1="315" y1="90" x2="315" y2="130" stroke="#00f0ff" stroke-width="1.5"/>
           </g>
 
-          <g id="rightCouplerGroup" opacity="0">
+          <g class="port-b-group part-node" id="rightCouplerGroup" opacity="0" style="display:none;" onclick="inspectPart('COUPLER')" data-title="PUSH-LOCK QUICK COUPLER" data-desc="Hardened stainless ball-locking sleeve mechanism rated for 10,000 PSI with instant push-to-connect lock.">
             <rect x="255" y="70" width="75" height="80" rx="4" fill="#0e1320" stroke="#ff5533" stroke-width="2"/>
             <circle cx="292" cy="85" r="4" fill="#00f0ff"/>
             <circle cx="292" cy="135" r="4" fill="#00f0ff"/>
-            <rect x="330" y="85" width="35" height="50" fill="rgba(255,85,51,0.1)" stroke="#ff5533" stroke-width="1.5"/>
+            <rect x="330" y="85" width="35" height="50" fill="rgba(255,85,51,0.15)" stroke="#ff5533" stroke-width="1.5"/>
           </g>
-
-          <line x1="10" y1="110" x2="365" y2="110" stroke="#ff5533" stroke-width="2" stroke-dasharray="6 3"/>
         </svg>
+      </div>
 
-        <div class="measure-line">
-          <span id="portALabel">PORT A: 1/2" OD TUBE</span>
-          <span id="centerTypeLabel">BODY: SS316 HEX BAR</span>
-          <span id="portBLabel">PORT B: 1/2" MALE NPT</span>
+      <div class="part-telemetry" id="telemetryBox">
+        <div>
+          <span class="telemetry-title" id="telemetryTitle">> CLICK ANY HOLOGRAM PART TO INSPECT</span>
+          <div class="telemetry-desc" id="telemetryDesc">..</div>
         </div>
       </div>
 
-      <div class="hud-header">
-        <span id="sealingTechLabel">THREAD SEAL: TAPERED NPT / PTFE</span>
-        <span>MATERIAL: SS316 / ASTM A276</span>
+      <div class="hud-header" style="margin-top:12px;">
+        <div class="holo-toolbar">
+          <button class="tool-btn" id="btnExplode" onclick="toggleExplodedView()">[ EXPLODED VIEW ]</button>
+          <button class="tool-btn" id="btnFlow" onclick="toggleFlowSimulation()">[ SIMULATE FLOW ]</button>
+          <button class="tool-btn" id="btnReset" onclick="resetHologramView()">[ RESET VIEW ]</button>
+        </div>
+        <span id="sealingTechLabel" style="align-self: center;"></span>
       </div>
+
     </div>
 
     <div class="details-stage">
       <div>
-        <div class="sys-id">// PRODUCT CLASSIFICATION #06</div>
         <h1 class="cyber-title">CONNECTORS & COUPLERS</h1>
       </div>
 
       <p class="cyber-desc">
-        High-pressure SS316 stainless steel male/female tube connectors and quick-disconnect couplers. Engineered for zero-leak transition between tube fittings, valves, manifolds, and high-pressure hose assemblies in CNG refueling, hydraulic power units, and gas processing skids.
+        Our premium high-pressure connectors and couplers are engineered to establish ultra-secure, leak-tight joints between tubing, hoses, and system components. Precision-machined from high-strength 316 stainless steel, these adapters offer maximum resistance to corrosion, high-frequency vibrations, and thermal shock. They effortlessly bridge fluid networks while maintaining absolute structural integrity under extreme operating pressures exceeding 10,000 PSI. The precision-fit threads and robust sealing surfaces guarantee quick, cross-thread-free installations and safe, gas-tight performance. Ideal for demanding oil and gas, hydraulic lines, and chemical processing applications, these rugged components prevent costly downtime.
       </p>
 
       <div>
-        <div class="selector-label">> SELECT COMPONENT TYPE:</div>
+        <div class="selector-label">> SELECT COMPONENT CONFIGURATION:</div>
         <div class="type-switchers">
           <button class="type-btn active" onclick="switchConnector('maleNpt', this)">MALE TUBE CONNECTOR (6,000 PSI)</button>
           <button class="type-btn" onclick="switchConnector('quickCoupler', this)">QUICK-CONNECT COUPLER (10,000 PSI)</button>
@@ -473,24 +574,134 @@
       </div>
 
       <div class="action-block">
-        <a href="https://whatsform.com/lberoa" target="_blank" rel="noopener" class="cyber-btn btn-cyan">
+        <a href="https://whatsform.com/lberoa" target="_blank" rel="noopener" class="cyber-btn btn-cyan" onclick="playBeep()">
           INITIATE INQUIRY
         </a>
-        <a href="https://wa.me/919425055784?text=Hi%2C%20I%20want%20to%20inquire%20about%20SS316%20Connectors%20and%20Quick%20Couplers." target="_blank" rel="noopener" class="cyber-btn btn-wire">
-          WHATSAPP HQ
-        </a>
+        
       </div>
     </div>
 
   </main>
 
   <footer>
-    <div>TERMINAL STATUS: ONLINE</div>
-    <div>UNITED ENTERPRISES GROUP // NIGERIA INDUSTRIAL SUPPLY</div>
+    <div>UNITED ENTERPRISES GROUP | NIGERIA INDUSTRIAL SUPPLY</div>
   </footer>
 
   <script>
+    // Audio FX Synthesizer (Native Web Audio API)
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    
+    function playBeep(freq = 800, duration = 0.05) {
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      try {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.value = freq;
+        gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+      } catch (e) {}
+    }
+
+    // 3D Parallax Tilt Effect on Hologram Stage
+    const viewportStage = document.getElementById('viewportStage');
+    const holoContainer = document.getElementById('holoContainer');
+
+    viewportStage.addEventListener('mousemove', (e) => {
+      const rect = viewportStage.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      
+      const rotateX = (-y / rect.height) * 18; // Max 18 deg tilt
+      const rotateY = (x / rect.width) * 18;
+
+      holoContainer.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+
+    viewportStage.addEventListener('mouseleave', () => {
+      holoContainer.style.transform = 'rotateX(0deg) rotateY(0deg)';
+    });
+
+    // Hologram Part Inspection
+    function inspectPart(partKey) {
+      playBeep(1200, 0.08);
+      const nodes = document.querySelectorAll('.part-node');
+      nodes.forEach(n => n.classList.remove('active-part'));
+
+      const telemetryTitle = document.getElementById('telemetryTitle');
+      const telemetryDesc = document.getElementById('telemetryDesc');
+
+      let targetNode = null;
+      if (partKey === 'NUT') targetNode = document.querySelector('.nut-group');
+      if (partKey === 'FERRULES') targetNode = document.querySelector('.ferrules-group');
+      if (partKey === 'BODY') targetNode = document.querySelector('.body-group');
+      if (partKey === 'THREAD') targetNode = document.getElementById('rightNptGroup');
+      if (partKey === 'COUPLER') targetNode = document.getElementById('rightCouplerGroup');
+
+      if (targetNode) {
+        targetNode.classList.add('active-part');
+        telemetryTitle.innerText = '> ' + targetNode.getAttribute('data-title');
+        telemetryDesc.innerText = targetNode.getAttribute('data-desc');
+      }
+    }
+
+    // Exploded View Toggle
+    let isExploded = false;
+    function toggleExplodedView() {
+      playBeep(600, 0.1);
+      isExploded = !isExploded;
+      const btn = document.getElementById('btnExplode');
+      const container = document.getElementById('svgBlueprint');
+
+      if (isExploded) {
+        container.classList.add('exploded');
+        btn.classList.add('active-tool');
+      } else {
+        container.classList.remove('exploded');
+        btn.classList.remove('active-tool');
+      }
+    }
+
+    // Flow Simulation Toggle
+    let isFlowing = false;
+    function toggleFlowSimulation() {
+      playBeep(900, 0.1);
+      isFlowing = !isFlowing;
+      const btn = document.getElementById('btnFlow');
+      const container = document.getElementById('svgBlueprint');
+
+      if (isFlowing) {
+        container.classList.add('flow-active');
+        btn.classList.add('active-tool');
+      } else {
+        container.classList.remove('flow-active');
+        btn.classList.remove('active-tool');
+      }
+    }
+
+    // Reset Hologram View
+    function resetHologramView() {
+      playBeep(500, 0.05);
+      isExploded = false;
+      isFlowing = false;
+      const container = document.getElementById('svgBlueprint');
+      container.classList.remove('exploded', 'flow-active');
+      
+      document.getElementById('btnExplode').classList.remove('active-tool');
+      document.getElementById('btnFlow').classList.remove('active-tool');
+      document.querySelectorAll('.part-node').forEach(n => n.classList.remove('active-part'));
+
+      document.getElementById('telemetryTitle').innerText = '> CLICK ANY HOLOGRAM PART TO INSPECT';
+      document.getElementById('telemetryDesc').innerText = 'Hover over component vectors for real-time specification readouts.';
+    }
+
+    // Switch Connector / Quick Coupler Configuration
     function switchConnector(type, btn) {
+      playBeep(1000, 0.08);
       document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
@@ -499,11 +710,6 @@
       const connVal = document.getElementById('connVal');
       const sealVal = document.getElementById('sealVal');
       const tempVal = document.getElementById('tempVal');
-      
-      const portALabel = document.getElementById('portALabel');
-      const portBLabel = document.getElementById('portBLabel');
-      const centerTypeLabel = document.getElementById('centerTypeLabel');
-      const sealingTechLabel = document.getElementById('sealingTechLabel');
 
       const rightNptGroup = document.getElementById('rightNptGroup');
       const rightCouplerGroup = document.getElementById('rightCouplerGroup');
@@ -515,12 +721,10 @@
         sealVal.innerText = 'Metal-to-Metal / NPT';
         tempVal.innerText = '-198°C to +648°C';
 
-        portALabel.innerText = 'PORT A: 1/2" OD TUBE';
-        portBLabel.innerText = 'PORT B: 1/2" MALE NPT';
-        centerTypeLabel.innerText = 'BODY: SS316 HEX BAR';
-        sealingTechLabel.innerText = 'THREAD SEAL: TAPERED NPT / PTFE';
-
+        rightNptGroup.style.display = 'block';
         rightNptGroup.setAttribute('opacity', '1');
+        
+        rightCouplerGroup.style.display = 'none';
         rightCouplerGroup.setAttribute('opacity', '0');
       } else {
         drawingId.innerText = 'DRAWING ID: QC-PUSH-316';
@@ -529,12 +733,10 @@
         sealVal.innerText = 'FKM O-Ring & PTFE Backup';
         tempVal.innerText = '-29°C to +204°C';
 
-        portALabel.innerText = 'PORT A: 1/2" FEMALE NPT';
-        portBLabel.innerText = 'PORT B: QUICK-DISCONNECT NIPPLE';
-        centerTypeLabel.innerText = 'SLEEVE: BALL LATCH MECHANISM';
-        sealingTechLabel.innerText = 'SEAL: DUAL FKM O-RING SHUTOFF';
-
+        rightNptGroup.style.display = 'none';
         rightNptGroup.setAttribute('opacity', '0');
+
+        rightCouplerGroup.style.display = 'block';
         rightCouplerGroup.setAttribute('opacity', '1');
       }
     }
