@@ -4,24 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SS316 Union Elbow 90° Fitting (3/4" & 1/2") | United Enterprises Group</title>
-<meta name="title" content="SS316 Union Elbow 90° Fitting (3/4&quot; &amp; 1/2&quot;) | United Enterprises Group">
-<meta name="description" content="High-pressure SS316 stainless steel double ferrule union elbow fittings. Designed for 90-degree directional changes in CNG compressor lines and hydraulic systems up to 6,000 PSI.">
-<meta name="keywords" content="SS316 union elbow, 90 degree tube elbow, double ferrule union elbow, high pressure CNG fittings, Swagelok type elbow, industrial tube fittings Nigeria">
+<title>Interactive SS316 Union Elbow Fitting (90° Tube Elbow) | United Enterprises Group</title>
+<meta name="title" content="SS316 Union Elbow Fitting (90° Equal & Reducing) | United Enterprises Group">
+<meta name="description" content="Interactive 3D blueprint visualizer for SS316 stainless steel double ferrule union elbow fittings. Rated to 6,000 PSI for 90-degree directional gas and hydraulic flow systems in Nigeria.">
+<meta name="keywords" content="SS316 union elbow, 90 degree tube elbow, double ferrule union elbow, reducing elbow fitting, high pressure CNG fittings Nigeria, Swagelok type elbow">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://unitedengineersgroup.work.gd/union-elbow.html">
 
 <meta property="og:type" content="product">
 <meta property="og:site_name" content="United Enterprises Group">
-<meta property="og:title" content="SS316 Stainless Steel Union Elbow (90° Directional Tube Fitting)">
-<meta property="og:description" content="Forged SS316 90° union elbows rated to 6,000 PSI. Dual ferrule leak-proof sealing for process flow and hydraulic lines.">
+<meta property="og:title" content="SS316 Stainless Steel Union Elbow (90° Tube Fitting)">
+<meta property="og:description" content="Interactive SS316 90-degree union elbows rated up to 6,000 PSI. Zero-leak double ferrule compression sealing for CNG and hydraulic systems.">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org/",
   "@type": "Product",
-  "name": "SS316 Stainless Steel Union Elbow 90°",
-  "description": "Forged SS316 double-ferrule 90-degree union elbows engineered for direction changes in high-pressure CNG and hydraulic tubing runs.",
+  "name": "SS316 Stainless Steel Union Elbow (90° Equal & Reducing)",
+  "description": "Forged SS316 double-ferrule 90-degree union elbows engineered for direction-change process piping in high-pressure CNG compressor stations and hydraulic systems.",
   "brand": { "@type": "Brand", "name": "United Enterprises Group" },
   "offers": {
     "@type": "Offer",
@@ -41,12 +41,14 @@
     --bg-void: #020408;
     --panel-cyber: #090d16;
     --panel-matte: #0e1320;
-    --border-dim: rgba(0, 240, 255, 0.12);
+    --border-dim: rgba(0, 240, 255, 0.15);
     --border-bright: #00f0ff;
     
     --cyan: #00f0ff;
-    --cyan-glow: rgba(0, 240, 255, 0.25);
+    --cyan-glow: rgba(0, 240, 255, 0.35);
     --orange: #ff5533;
+    --orange-glow: rgba(255, 85, 51, 0.4);
+    --green: #00ff88;
     
     --text-primary: #e6f1ff;
     --text-dim: #607b96;
@@ -72,20 +74,20 @@
   .scanline-overlay {
     position: fixed;
     top: 0; left: 0; width: 100vw; height: 100vh;
-    background: linear-gradient(rgba(18, 160, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
     background-size: 100% 4px;
     z-index: 99;
     pointer-events: none;
-    opacity: 0.6;
+    opacity: 0.5;
   }
 
-  /* Scoped Top Navigation Header */
+  /* Navigation Header */
   .site-header {
     position: fixed;
     top: 0; left: 0; width: 100%;
     z-index: 100;
-    background: rgba(2, 4, 8, 0.85);
-    backdrop-filter: blur(8px);
+    background: rgba(2, 4, 8, 0.9);
+    backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-dim);
     padding: 16px 5vw;
     display: flex;
@@ -112,10 +114,23 @@
     color: var(--cyan);
     background: rgba(0, 240, 255, 0.08);
     border: 1px solid var(--border-dim);
-    padding: 4px 8px;
+    padding: 4px 10px;
     border-radius: 2px;
     letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
+
+  .status-dot {
+    width: 6px; height: 6px;
+    background: var(--green);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--green);
+    animation: blink 1.5s infinite alternate;
+  }
+
+  @keyframes blink { 0% { opacity: 0.3; } 100% { opacity: 1; } }
 
   .back-btn {
     font-family: 'JetBrains Mono', monospace;
@@ -126,32 +141,34 @@
   }
   .back-btn:hover { color: var(--cyan); }
 
-  /* Main Container */
+  /* Main Container Layout */
   .cyber-wrapper {
-    max-width: 1350px;
-    margin: 110px auto 60px;
-    padding: 0 4vw;
+    max-width: 1400px;
+    margin: 100px auto 60px;
+    padding: 0 3vw;
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 40px;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 35px;
   }
 
-  @media (max-width: 968px) {
+  @media (max-width: 1024px) {
     .cyber-wrapper { grid-template-columns: 1fr; margin-top: 80px; }
   }
 
-  /* Left: Cyber Stage Visualizer */
+  /* Left: Hologram Viewport Stage */
   .viewport-stage {
     background: var(--panel-cyber);
     border: 1px solid var(--border-dim);
     border-radius: 4px;
     position: relative;
-    padding: 40px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 500px;
+    min-height: 560px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    perspective: 1000px;
+    overflow: hidden;
   }
 
   .corner-bracket {
@@ -159,6 +176,7 @@
     width: 12px; height: 12px;
     border-color: var(--cyan);
     border-style: solid;
+    pointer-events: none;
   }
   .cb-tl { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
   .cb-tr { top: -1px; right: -1px; border-width: 2px 2px 0 0; }
@@ -171,59 +189,127 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.75rem;
     color: var(--text-dim);
+    z-index: 5;
   }
 
-  /* SVG Render Area for 90 Degree Elbow */
-  .tube-render-area {
+  /* SVG Interactive Blueprint Canvas */
+  .hologram-container {
     position: relative;
     width: 100%;
-    height: 280px;
+    height: 330px;
     margin: auto 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.15s ease-out;
+    transform-style: preserve-3d;
   }
 
   .svg-blueprint {
     width: 100%;
-    max-width: 360px;
+    max-width: 440px;
     height: auto;
-    filter: drop-shadow(0 0 12px rgba(0, 240, 255, 0.2));
+    filter: drop-shadow(0 0 15px rgba(0, 240, 255, 0.25));
   }
 
+  /* Hologram Part Interactivity */
+  .part-node {
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .part-node:hover, .part-node.active-part {
+    stroke: var(--orange) !important;
+    fill: rgba(255, 85, 51, 0.25) !important;
+    filter: drop-shadow(0 0 10px var(--orange));
+  }
+
+  /* Multi-Axis Exploded View Animations for Union Elbow */
+  .exploded .top-port-group { transform: translateY(-35px); transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .exploded .right-port-group { transform: translateX(35px); transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .exploded .body-group { transform: translate(0, 0); transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
+
+  .top-port-group, .right-port-group, .body-group { transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
+
+  /* Hologram Scanner Line */
   .laser-scanner {
     position: absolute;
-    top: 10px; bottom: 10px;
+    top: 5px; bottom: 5px;
     width: 2px;
-    background: var(--orange);
-    box-shadow: 0 0 12px var(--orange);
-    animation: scanAnimation 3.5s infinite ease-in-out;
+    background: var(--cyan);
+    box-shadow: 0 0 15px var(--cyan);
+    animation: scanAnimation 4s infinite ease-in-out;
+    pointer-events: none;
+    opacity: 0.7;
   }
 
   @keyframes scanAnimation {
-    0% { left: 10%; opacity: 0; }
-    15% { opacity: 1; }
-    85% { opacity: 1; }
-    100% { left: 90%; opacity: 0; }
+    0% { left: 5%; opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { left: 95%; opacity: 0.2; }
   }
 
-  .measure-line {
-    position: absolute;
-    bottom: -10px; left: 0; width: 100%;
-    border-bottom: 1px dashed var(--text-dim);
+  /* Flow Vector Path for 90° Elbow */
+  .flow-path {
+    stroke-dasharray: 8, 6;
+    animation: flowMove 1s linear infinite;
+    display: none;
+  }
+  .flow-active .flow-path { display: block; }
+
+  @keyframes flowMove {
+    0% { stroke-dashoffset: 28; }
+    100% { stroke-dashoffset: 0; }
+  }
+
+  /* Controls Overlay Bar */
+  .holo-toolbar {
     display: flex;
-    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+    z-index: 10;
+  }
+
+  .tool-btn {
+    background: var(--panel-matte);
+    border: 1px solid var(--border-dim);
+    color: var(--text-primary);
+    padding: 6px 12px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.7rem;
-    color: var(--cyan);
-    padding-top: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
   }
 
-  /* Right Side: Product Specs */
+  .tool-btn:hover, .tool-btn.active-tool {
+    background: rgba(0, 240, 255, 0.15);
+    border-color: var(--cyan);
+    color: var(--cyan);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+  }
+
+  /* Live Telemetry Display Popover */
+  .part-telemetry {
+    background: rgba(9, 13, 22, 0.95);
+    border: 1px solid var(--orange);
+    padding: 10px 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-primary);
+    box-shadow: 0 0 20px rgba(255, 85, 51, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 44px;
+  }
+
+  .telemetry-title { color: var(--orange); font-weight: 700; }
+  .telemetry-desc { color: var(--text-dim); }
+
+  /* Right Side: Technical Specs & Controls */
   .details-stage {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 22px;
   }
 
   .sys-id {
@@ -235,7 +321,7 @@
 
   .cyber-title {
     font-family: 'Orbitron', sans-serif;
-    font-size: clamp(2rem, 3.5vw, 2.6rem);
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
     font-weight: 900;
     text-transform: uppercase;
     line-height: 1.1;
@@ -244,7 +330,7 @@
 
   .cyber-desc {
     color: var(--text-dim);
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 1.6;
     font-weight: 300;
   }
@@ -259,7 +345,7 @@
 
   .type-switchers {
     display: flex;
-    gap: 12px;
+    gap: 10px;
   }
 
   .type-btn {
@@ -270,7 +356,7 @@
     padding: 12px;
     font-family: 'JetBrains Mono', monospace;
     font-weight: 700;
-    font-size: 0.85rem;
+    font-size: 0.78rem;
     cursor: pointer;
     transition: all 0.2s;
     text-align: center;
@@ -287,19 +373,18 @@
   .hud-metrics {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-top: 10px;
+    gap: 10px;
   }
 
   .metric-card {
     background: var(--panel-matte);
     border: 1px solid var(--border-dim);
-    padding: 14px 18px;
+    padding: 12px 16px;
   }
 
   .metric-card .title {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.68rem;
+    font-size: 0.65rem;
     color: var(--text-dim);
     text-transform: uppercase;
   }
@@ -314,13 +399,13 @@
 
   .action-block {
     display: flex;
-    gap: 16px;
-    margin-top: 10px;
+    gap: 14px;
+    margin-top: 5px;
   }
 
   .cyber-btn {
     flex: 1;
-    padding: 16px;
+    padding: 15px;
     font-family: 'Orbitron', sans-serif;
     font-size: 0.85rem;
     font-weight: 800;
@@ -353,7 +438,7 @@
 
   footer {
     border-top: 1px solid var(--border-dim);
-    padding: 24px 5vw;
+    padding: 20px 5vw;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.75rem;
     color: var(--text-muted);
@@ -369,73 +454,92 @@
 
   <header class="site-header">
     <div class="nav-logo">
-      UEG <span>//</span> SPEC-PAGE
+	<img src="logocompany.png" alt="United Enterprises Logo">
+      United Enterprises Group <span>|</span> Product specifications interactive display
     </div>
-    <div class="status-tag">SYSTEM OK // SS316</div>
-    <a href="index.html" class="back-btn">[ ESC ] RETURN TO SYSTEM DIRECTORY</a>
+    
+    <a href="index.html" class="back-btn">Back</a>
   </header>
 
   <main class="cyber-wrapper">
     
-    <div class="viewport-stage">
+    <div class="viewport-stage" id="viewportStage">
       <div class="corner-bracket cb-tl"></div>
       <div class="corner-bracket cb-tr"></div>
       <div class="corner-bracket cb-bl"></div>
       <div class="corner-bracket cb-br"></div>
 
       <div class="hud-header">
-        <span id="drawingId">DRAWING ID: ELB-34-316</span>
-        <span>SCALE: 1:1 CYBER RENDER</span>
+        <span id="drawingId"></span>
+        <span></span>
       </div>
 
-      <div class="tube-render-area">
-        <div class="laser-scanner"></div>
+      <div class="hologram-container" id="holoContainer">
+        <div class="laser-scanner" id="laserScanner"></div>
 
-        <svg class="svg-blueprint" viewBox="0 0 320 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M 60 50 L 170 50 C 190 50 200 60 200 80 L 200 190 Z" fill="#090d16" stroke="#00f0ff" stroke-width="2"/>
+        <svg class="svg-blueprint" id="svgBlueprint" viewBox="0 0 380 280" fill="none" xmlns="http://www.w3.org/2000/svg">
           
-          <path d="M 50 35 L 180 35 L 215 70 L 215 200 L 160 200 L 160 90 L 50 90 Z" fill="#0e1320" stroke="#00f0ff" stroke-width="1.5"/>
+          <path class="flow-path" d="M 145 15 L 145 180 L 365 180" stroke="#ff5533" stroke-width="4" fill="none"/>
 
-          <rect id="leftTube" x="0" y="48" width="50" height="30" fill="rgba(0,240,255,0.05)" stroke="#00f0ff" stroke-width="1.5"/>
-          <path id="leftNut" d="M 50 28 L 85 38 L 85 88 L 50 98 Z" fill="#090d16" stroke="#00f0ff" stroke-width="2"/>
+          <g class="body-group part-node" onclick="inspectPart('BODY')" data-title="FORGED SS316 90° ELBOW BODY" data-desc="Heavy forged square-body SS316 elbow contoured for smooth 90-degree direction change with minimal fluid turbulence.">
+            <path d="M 115 110 L 175 110 L 175 150 L 215 150 L 215 210 L 115 210 Z" fill="#090d16" stroke="#00f0ff" stroke-width="2"/>
+            <path d="M 125 120 L 165 120 L 165 160 L 205 160 L 205 200 L 125 200 Z" fill="#0e1320" stroke="#00f0ff" stroke-width="1.2" opacity="0.6"/>
+            <circle cx="145" cy="180" r="10" fill="rgba(0,240,255,0.15)" stroke="#00f0ff" stroke-width="1" stroke-dasharray="2 2"/>
+            <text x="133" y="183" fill="#00f0ff" font-family="Orbitron" font-size="7" font-weight="700">90°</text>
+          </g>
 
-          <rect id="bottomTube" x="173" y="200" width="30" height="50" fill="rgba(0,240,255,0.05)" stroke="#00f0ff" stroke-width="1.5"/>
-          <path id="bottomNut" d="M 153 200 L 163 165 L 213 165 L 223 200 Z" fill="#090d16" stroke="#00f0ff" stroke-width="2"/>
+          <g class="top-port-group part-node" onclick="inspectPart('PORT_A')" data-title="PORT A (VERTICAL INLET)" data-desc="1/2' OD double ferrule compression port with precision-machined threads and silver-plated nut.">
+            <rect x="130" y="20" width="30" height="45" fill="rgba(0,240,255,0.05)" stroke="#00f0ff" stroke-width="1.5"/>
+            <path d="M 115 110 L 125 65 L 165 65 L 175 110 Z" fill="#090d16" stroke="#00f0ff" stroke-width="2"/>
+            <polygon points="128,75 128,68 145,75" fill="#ff5533"/>
+            <polygon points="162,75 162,68 145,75" fill="#ff5533"/>
+            <text x="130" y="45" fill="#00f0ff" font-family="JetBrains Mono" font-size="7">PORT A</text>
+          </g>
 
-          <path d="M 10 63 L 188 63 L 188 240" stroke="#ff5533" stroke-width="1.5" stroke-dasharray="6 4"/>
-          
-          <circle cx="85" cy="63" r="3.5" fill="#ff5533"/>
-          <circle cx="188" cy="165" r="3.5" fill="#ff5533"/>
+          <g class="right-port-group part-node" onclick="inspectPart('PORT_B')" data-title="PORT B (HORIZONTAL OUTLET)" data-desc="Symmetric 1/2' OD double ferrule outlet ensuring a pressure-tight metal-to-metal seal up to 6,000 PSI.">
+            <rect id="rightTube" x="260" y="165" width="45" height="30" fill="rgba(0,240,255,0.05)" stroke="#00f0ff" stroke-width="1.5"/>
+            <path id="rightNut" d="M 215 150 L 260 160 L 260 200 L 215 210 Z" fill="#090d16" stroke="#00f0ff" stroke-width="2"/>
+            <polygon points="255,165 248,165 255,180" fill="#ff5533"/>
+            <polygon points="255,195 248,195 255,180" fill="#ff5533"/>
+            <text x="268" y="183" fill="#00f0ff" font-family="JetBrains Mono" font-size="7">PORT B</text>
+          </g>
+
         </svg>
+      </div>
 
-        <div class="measure-line">
-          <span id="portALabel">PORT A: 3/4" OD</span>
-          <span id="centerTypeLabel">ANGLE: 90° DIRECTIONAL</span>
-          <span id="portBLabel">PORT B: 3/4" OD</span>
+      <div class="part-telemetry" id="telemetryBox">
+        <div>
+          <span class="telemetry-title" id="telemetryTitle">> CLICK ANY HOLOGRAM VECTOR TO INSPECT</span>
+          <div class="telemetry-desc" id="telemetryDesc">..</div>
         </div>
+        <span style="color: var(--cyan); font-weight:700;"></span>
       </div>
 
-      <div class="hud-header">
-        <span>FERRULE: DUAL-SEAL 90°</span>
-        <span>MATERIAL: FORGED SS316</span>
+      <div class="hud-header" style="margin-top:12px;">
+        <div class="holo-toolbar">
+          <button class="tool-btn" id="btnExplode" onclick="toggleExplodedView()">[ EXPLODED VIEW ]</button>
+          <button class="tool-btn" id="btnFlow" onclick="toggleFlowSimulation()">[ SIMULATE FLOW ]</button>
+          <button class="tool-btn" id="btnReset" onclick="resetHologramView()">[ RESET VIEW ]</button>
+        </div>
+        <span id="sealingTechLabel" style="align-self: center;"></span>
       </div>
+
     </div>
 
     <div class="details-stage">
       <div>
-        <div class="sys-id">// PRODUCT CLASSIFICATION #03</div>
-        <h1 class="cyber-title">UNION ELBOW 90°</h1>
+        <h1 class="cyber-title">UNION ELBOW (90°)</h1>
       </div>
 
       <p class="cyber-desc">
-        Forged SS316 high-pressure 90° union elbows. Designed for seamless directional routing in tight space constraints without reducing fluid velocity or risking wall thin-out from manual tube bending. Features dual twin-ferrule compression ends.
+        Our premium high-pressure union elbows are engineered to provide reliable 90-degree directional changes in demanding fluid system layouts. Precision-machined from high-grade 316 stainless steel, these fittings deliver exceptional resistance to mechanical stress, severe vibrations, and harsh chemicals. They seamlessly connect high-pressure SS tubing while maintaining complete leak-tight integrity at extreme operating limits exceeding 10,000 PSI. The engineered internal radius minimizes turbulence and fluid pressure drop, ensuring smooth, unrestricted system flow. Perfect for tight spaces in oil and gas, chemical processing, and hydraulic systems, these rugged elbows guarantee quick, safe installation.
       </p>
 
       <div>
-        <div class="selector-label">> SELECT OUTER DIAMETER [OD]:</div>
+        <div class="selector-label">> SELECT CONFIGURATION MODE:</div>
         <div class="type-switchers">
-          <button class="type-btn active" onclick="switchElbow('3/4', this)">3/4" INCH (19.05mm)</button>
-          <button class="type-btn" onclick="switchElbow('1/2', this)">1/2" INCH (12.70mm)</button>
+          <button class="type-btn active" onclick="switchElbow('equal', this)">EQUAL ELBOW (1/2" x 1/2")</button>
+          <button class="type-btn" onclick="switchElbow('reducing', this)">REDUCING ELBOW (1/2" x 3/4")</button>
         </div>
       </div>
 
@@ -445,25 +549,22 @@
           <div class="val" id="pressureVal">6,000 PSI</div>
         </div>
         <div class="metric-card">
-          <div class="title">Flow Angle</div>
-          <div class="val">90° Precision Corner</div>
+          <div class="title">Elbow Bend</div>
+          <div class="val" id="bendVal">90° Equal Pass</div>
         </div>
         <div class="metric-card">
-          <div class="title">Thread / Nut Finish</div>
-          <div class="val">Anti-Galling Silver Plated</div>
+          <div class="title">Nut Plating</div>
+          <div class="val">Silver-Plated (Anti-Galling)</div>
         </div>
         <div class="metric-card">
-          <div class="title">Vibration Rating</div>
-          <div class="val">High (CNG/Compressor Rated)</div>
+          <div class="title">Temp Tolerance</div>
+          <div class="val">-198°C to +648°C</div>
         </div>
       </div>
 
       <div class="action-block">
-        <a href="https://whatsform.com/lberoa" target="_blank" rel="noopener" class="cyber-btn btn-cyan">
+        <a href="https://whatsform.com/lberoa" target="_blank" rel="noopener" class="cyber-btn btn-cyan" onclick="playBeep()">
           INITIATE INQUIRY
-        </a>
-        <a href="https://wa.me/919425055784?text=Hi%2C%20I%20want%20to%20inquire%20about%20SS316%20Union%20Elbow%20(90%20degree)." target="_blank" rel="noopener" class="cyber-btn btn-wire">
-          WHATSAPP HQ
         </a>
       </div>
     </div>
@@ -471,30 +572,148 @@
   </main>
 
   <footer>
-    <div>TERMINAL STATUS: ONLINE</div>
-    <div>UNITED ENTERPRISES GROUP // NIGERIA INDUSTRIAL SUPPLY</div>
+    <div>UNITED ENTERPRISES GROUP | NIGERIA INDUSTRIAL SUPPLY</div>
   </footer>
 
   <script>
-    function switchElbow(size, btn) {
+    // Audio FX Synthesizer (Native Web Audio API)
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    
+    function playBeep(freq = 800, duration = 0.05) {
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      try {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.value = freq;
+        gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+      } catch (e) {}
+    }
+
+    // 3D Parallax Tilt Effect on Hologram Stage
+    const viewportStage = document.getElementById('viewportStage');
+    const holoContainer = document.getElementById('holoContainer');
+
+    viewportStage.addEventListener('mousemove', (e) => {
+      const rect = viewportStage.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      
+      const rotateX = (-y / rect.height) * 18;
+      const rotateY = (x / rect.width) * 18;
+
+      holoContainer.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+
+    viewportStage.addEventListener('mouseleave', () => {
+      holoContainer.style.transform = 'rotateX(0deg) rotateY(0deg)';
+    });
+
+    // Hologram Part Inspection
+    function inspectPart(partKey) {
+      playBeep(1200, 0.08);
+      const nodes = document.querySelectorAll('.part-node');
+      nodes.forEach(n => n.classList.remove('active-part'));
+
+      const telemetryTitle = document.getElementById('telemetryTitle');
+      const telemetryDesc = document.getElementById('telemetryDesc');
+
+      let targetNode = null;
+      if (partKey === 'BODY') targetNode = document.querySelector('.body-group');
+      if (partKey === 'PORT_A') targetNode = document.querySelector('.top-port-group');
+      if (partKey === 'PORT_B') targetNode = document.querySelector('.right-port-group');
+
+      if (targetNode) {
+        targetNode.classList.add('active-part');
+        telemetryTitle.innerText = '> ' + targetNode.getAttribute('data-title');
+        telemetryDesc.innerText = targetNode.getAttribute('data-desc');
+      }
+    }
+
+    // Exploded View Toggle
+    let isExploded = false;
+    function toggleExplodedView() {
+      playBeep(600, 0.1);
+      isExploded = !isExploded;
+      const btn = document.getElementById('btnExplode');
+      const container = document.getElementById('svgBlueprint');
+
+      if (isExploded) {
+        container.classList.add('exploded');
+        btn.classList.add('active-tool');
+      } else {
+        container.classList.remove('exploded');
+        btn.classList.remove('active-tool');
+      }
+    }
+
+    // Flow Simulation Toggle
+    let isFlowing = false;
+    function toggleFlowSimulation() {
+      playBeep(900, 0.1);
+      isFlowing = !isFlowing;
+      const btn = document.getElementById('btnFlow');
+      const container = document.getElementById('svgBlueprint');
+
+      if (isFlowing) {
+        container.classList.add('flow-active');
+        btn.classList.add('active-tool');
+      } else {
+        container.classList.remove('flow-active');
+        btn.classList.remove('active-tool');
+      }
+    }
+
+    // Reset Hologram View
+    function resetHologramView() {
+      playBeep(500, 0.05);
+      isExploded = false;
+      isFlowing = false;
+      const container = document.getElementById('svgBlueprint');
+      container.classList.remove('exploded', 'flow-active');
+      
+      document.getElementById('btnExplode').classList.remove('active-tool');
+      document.getElementById('btnFlow').classList.remove('active-tool');
+      document.querySelectorAll('.part-node').forEach(n => n.classList.remove('active-part'));
+
+      document.getElementById('telemetryTitle').innerText = '> CLICK ANY HOLOGRAM VECTOR TO INSPECT';
+      document.getElementById('telemetryDesc').innerText = 'Hover over component vectors for real-time specification readouts.';
+    }
+
+    // Switch Equal / Reducing Elbow Mode
+    function switchElbow(type, btn) {
+      playBeep(1000, 0.08);
       document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
       const drawingId = document.getElementById('drawingId');
       const pressureVal = document.getElementById('pressureVal');
-      const portALabel = document.getElementById('portALabel');
-      const portBLabel = document.getElementById('portBLabel');
+      const bendVal = document.getElementById('bendVal');
+      
+      const rightNut = document.getElementById('rightNut');
+      const rightTube = document.getElementById('rightTube');
 
-      if (size === '3/4') {
-        drawingId.innerText = 'DRAWING ID: ELB-34-316';
+      if (type === 'equal') {
+        drawingId.innerText = 'DRAWING ID: ELB-EQ-316';
         pressureVal.innerText = '6,000 PSI';
-        portALabel.innerText = 'PORT A: 3/4" OD';
-        portBLabel.innerText = 'PORT B: 3/4" OD';
+        bendVal.innerText = '90° Equal Pass';
+
+        rightNut.setAttribute('d', 'M 215 150 L 260 160 L 260 200 L 215 210 Z');
+        rightTube.setAttribute('y', '165');
+        rightTube.setAttribute('height', '30');
       } else {
-        drawingId.innerText = 'DRAWING ID: ELB-12-316';
-        pressureVal.innerText = '6,500 PSI';
-        portALabel.innerText = 'PORT A: 1/2" OD';
-        portBLabel.innerText = 'PORT B: 1/2" OD';
+        drawingId.innerText = 'DRAWING ID: ELB-RED-316';
+        pressureVal.innerText = '6,000 PSI';
+        bendVal.innerText = '1/2" Inlet x 3/4" Outlet';
+
+        rightNut.setAttribute('d', 'M 215 155 L 255 163 L 255 197 L 215 205 Z');
+        rightTube.setAttribute('y', '170');
+        rightTube.setAttribute('height', '20');
       }
     }
   </script>
