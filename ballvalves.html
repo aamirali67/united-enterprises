@@ -4,28 +4,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SS316 High-Pressure Ball Valve (2-Way & 3-Way) | United Enterprises Group</title>
-<meta name="title" content="SS316 High-Pressure Ball Valve (2-Way &amp; 3-Way) | United Enterprises Group">
-<meta name="description" content="High-pressure SS316 stainless steel instrumentation ball valves rated up to 6,000 PSI. Bi-directional flow control, quarter-turn low-torque handle, and double ferrule tube connections for CNG and industrial fluid systems.">
-<meta name="keywords" content="SS316 ball valve, high pressure ball valve 6000 PSI, instrumentation ball valve, 3 way ball valve, double ferrule ball valve Nigeria, CNG ball valve supplier, Swagelok type valve">
+<title>Interactive SS316 High-Pressure Ball Valves | United Enterprises Group</title>
+<meta name="title" content="SS316 High-Pressure Ball Valves (2-Way & 3-Way) | United Enterprises Group">
+<meta name="description" content="Interactive 3D blueprint visualizer for SS316 stainless steel high-pressure instrumentation ball valves. Rated up to 10,000 PSI with PEEK seats for CNG dispensers, hydraulic control skids, and gas manifolds in Nigeria.">
+<meta name="keywords" content="SS316 ball valve, high pressure ball valve 10000 psi, 2 way ball valve, 3 way panel mount ball valve, CNG dispenser valve Nigeria, instrumentation ball valve, interactive blueprint valve">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://unitedengineersgroup.work.gd/ball-valve.html">
+<link rel="canonical" href="https://unitedengineersgroup.work.gd/ball-valves.html">
 
 <meta property="og:type" content="product">
 <meta property="og:site_name" content="United Enterprises Group">
-<meta property="og:title" content="SS316 Stainless Steel High-Pressure Ball Valve">
-<meta property="og:description" content="Forged SS316 2-Way & 3-Way instrumentation ball valves rated to 6,000 PSI. Zero-leak PEEK/PTFE seated quarter-turn shutoff valves.">
+<meta property="og:title" content="SS316 Stainless Steel High-Pressure Ball Valves">
+<meta property="og:description" content="Interactive SS316 high-pressure instrumentation ball valves rated up to 10,000 PSI with zero-leak PEEK/PTFE seats.">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org/",
   "@type": "Product",
-  "name": "SS316 Stainless Steel High-Pressure Ball Valve",
-  "description": "Forged SS316 double-ferrule instrumentation ball valves engineered for high-pressure CNG compressor stations, gas isolation, and hydraulic flow control up to 6,000 PSI.",
+  "name": "SS316 Stainless Steel High-Pressure Instrumentation Ball Valves",
+  "description": "Forged SS316 2-Way and 3-Way instrumentation ball valves engineered for high-pressure CNG shutoff, hydraulic power units, and process gas pipelines.",
   "brand": { "@type": "Brand", "name": "United Enterprises Group" },
   "offers": {
     "@type": "Offer",
-    "url": "https://unitedengineersgroup.work.gd/ball-valve.html",
+    "url": "https://unitedengineersgroup.work.gd/ball-valves.html",
     "priceCurrency": "USD",
     "availability": "https://schema.org/InStock"
   }
@@ -41,12 +41,14 @@
     --bg-void: #020408;
     --panel-cyber: #090d16;
     --panel-matte: #0e1320;
-    --border-dim: rgba(0, 240, 255, 0.12);
+    --border-dim: rgba(0, 240, 255, 0.15);
     --border-bright: #00f0ff;
     
     --cyan: #00f0ff;
-    --cyan-glow: rgba(0, 240, 255, 0.25);
+    --cyan-glow: rgba(0, 240, 255, 0.35);
     --orange: #ff5533;
+    --orange-glow: rgba(255, 85, 51, 0.4);
+    --green: #00ff88;
     
     --text-primary: #e6f1ff;
     --text-dim: #607b96;
@@ -76,16 +78,16 @@
     background-size: 100% 4px;
     z-index: 99;
     pointer-events: none;
-    opacity: 0.6;
+    opacity: 0.5;
   }
 
-  /* Scoped Top Navigation Header */
+  /* Navigation Header */
   .site-header {
     position: fixed;
     top: 0; left: 0; width: 100%;
     z-index: 100;
-    background: rgba(2, 4, 8, 0.85);
-    backdrop-filter: blur(8px);
+    background: rgba(2, 4, 8, 0.9);
+    backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-dim);
     padding: 16px 5vw;
     display: flex;
@@ -112,10 +114,23 @@
     color: var(--cyan);
     background: rgba(0, 240, 255, 0.08);
     border: 1px solid var(--border-dim);
-    padding: 4px 8px;
+    padding: 4px 10px;
     border-radius: 2px;
     letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
+
+  .status-dot {
+    width: 6px; height: 6px;
+    background: var(--green);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--green);
+    animation: blink 1.5s infinite alternate;
+  }
+
+  @keyframes blink { 0% { opacity: 0.3; } 100% { opacity: 1; } }
 
   .back-btn {
     font-family: 'JetBrains Mono', monospace;
@@ -128,30 +143,32 @@
 
   /* Main Container Layout */
   .cyber-wrapper {
-    max-width: 1350px;
-    margin: 110px auto 60px;
-    padding: 0 4vw;
+    max-width: 1400px;
+    margin: 100px auto 60px;
+    padding: 0 3vw;
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 40px;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 35px;
   }
 
-  @media (max-width: 968px) {
+  @media (max-width: 1024px) {
     .cyber-wrapper { grid-template-columns: 1fr; margin-top: 80px; }
   }
 
-  /* Left: Cyber Visualizer Stage */
+  /* Left: Hologram Viewport Stage */
   .viewport-stage {
     background: var(--panel-cyber);
     border: 1px solid var(--border-dim);
     border-radius: 4px;
     position: relative;
-    padding: 40px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 520px;
+    min-height: 560px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    perspective: 1000px;
+    overflow: hidden;
   }
 
   .corner-bracket {
@@ -159,6 +176,7 @@
     width: 12px; height: 12px;
     border-color: var(--cyan);
     border-style: solid;
+    pointer-events: none;
   }
   .cb-tl { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
   .cb-tr { top: -1px; right: -1px; border-width: 2px 2px 0 0; }
@@ -171,59 +189,131 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.75rem;
     color: var(--text-dim);
+    z-index: 5;
   }
 
-  /* SVG Render Area for Ball Valve */
-  .tube-render-area {
+  /* SVG Interactive Blueprint Canvas */
+  .hologram-container {
     position: relative;
     width: 100%;
-    height: 300px;
+    height: 330px;
     margin: auto 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.15s ease-out;
+    transform-style: preserve-3d;
   }
 
   .svg-blueprint {
     width: 100%;
-    max-width: 420px;
+    max-width: 460px;
     height: auto;
-    filter: drop-shadow(0 0 12px rgba(0, 240, 255, 0.2));
+    filter: drop-shadow(0 0 15px rgba(0, 240, 255, 0.25));
   }
 
+  /* Hologram Part Interactivity */
+  .part-node {
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .part-node:hover, .part-node.active-part {
+    stroke: var(--orange) !important;
+    fill: rgba(255, 85, 51, 0.25) !important;
+    filter: drop-shadow(0 0 10px var(--orange));
+  }
+
+  /* Multi-Axis Exploded View Animations for Ball Valve */
+  .exploded .handle-group { transform: translateY(-30px); transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .exploded .stem-group { transform: translateY(-15px); transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .exploded .ball-group { transform: scale(1.1); transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .exploded .left-port-group { transform: translateX(-35px); transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .exploded .right-port-group { transform: translateX(35px); transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
+
+  .handle-group, .stem-group, .ball-group, .left-port-group, .right-port-group, .body-group { 
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); 
+  }
+
+  /* Hologram Scanner Line */
   .laser-scanner {
     position: absolute;
-    top: 10px; bottom: 10px;
+    top: 5px; bottom: 5px;
     width: 2px;
-    background: var(--orange);
-    box-shadow: 0 0 12px var(--orange);
-    animation: scanAnimation 3.5s infinite ease-in-out;
+    background: var(--cyan);
+    box-shadow: 0 0 15px var(--cyan);
+    animation: scanAnimation 4s infinite ease-in-out;
+    pointer-events: none;
+    opacity: 0.7;
   }
 
   @keyframes scanAnimation {
-    0% { left: 10%; opacity: 0; }
-    15% { opacity: 1; }
-    85% { opacity: 1; }
-    100% { left: 90%; opacity: 0; }
+    0% { left: 5%; opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { left: 95%; opacity: 0.2; }
   }
 
-  .measure-line {
-    position: absolute;
-    bottom: -10px; left: 0; width: 100%;
-    border-bottom: 1px dashed var(--text-dim);
+  /* Flow Vector Line */
+  .flow-line {
+    stroke-dasharray: 8, 6;
+    animation: flowMove 1s linear infinite;
+    display: none;
+  }
+  .flow-active .flow-line { display: block; }
+
+  @keyframes flowMove {
+    0% { stroke-dashoffset: 28; }
+    100% { stroke-dashoffset: 0; }
+  }
+
+  /* Controls Overlay Bar */
+  .holo-toolbar {
     display: flex;
-    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+    z-index: 10;
+  }
+
+  .tool-btn {
+    background: var(--panel-matte);
+    border: 1px solid var(--border-dim);
+    color: var(--text-primary);
+    padding: 6px 12px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.7rem;
-    color: var(--cyan);
-    padding-top: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
   }
 
-  /* Right Side: Technical Specs */
+  .tool-btn:hover, .tool-btn.active-tool {
+    background: rgba(0, 240, 255, 0.15);
+    border-color: var(--cyan);
+    color: var(--cyan);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+  }
+
+  /* Live Telemetry Display Popover */
+  .part-telemetry {
+    background: rgba(9, 13, 22, 0.95);
+    border: 1px solid var(--orange);
+    padding: 10px 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-primary);
+    box-shadow: 0 0 20px rgba(255, 85, 51, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 44px;
+  }
+
+  .telemetry-title { color: var(--orange); font-weight: 700; }
+  .telemetry-desc { color: var(--text-dim); }
+
+  /* Right Side: Technical Specs & Controls */
   .details-stage {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 22px;
   }
 
   .sys-id {
@@ -235,7 +325,7 @@
 
   .cyber-title {
     font-family: 'Orbitron', sans-serif;
-    font-size: clamp(2rem, 3.5vw, 2.6rem);
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
     font-weight: 900;
     text-transform: uppercase;
     line-height: 1.1;
@@ -244,7 +334,7 @@
 
   .cyber-desc {
     color: var(--text-dim);
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 1.6;
     font-weight: 300;
   }
@@ -259,7 +349,7 @@
 
   .type-switchers {
     display: flex;
-    gap: 12px;
+    gap: 10px;
   }
 
   .type-btn {
@@ -270,7 +360,7 @@
     padding: 12px;
     font-family: 'JetBrains Mono', monospace;
     font-weight: 700;
-    font-size: 0.85rem;
+    font-size: 0.78rem;
     cursor: pointer;
     transition: all 0.2s;
     text-align: center;
@@ -287,19 +377,18 @@
   .hud-metrics {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-top: 10px;
+    gap: 10px;
   }
 
   .metric-card {
     background: var(--panel-matte);
     border: 1px solid var(--border-dim);
-    padding: 14px 18px;
+    padding: 12px 16px;
   }
 
   .metric-card .title {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.68rem;
+    font-size: 0.65rem;
     color: var(--text-dim);
     text-transform: uppercase;
   }
@@ -314,13 +403,13 @@
 
   .action-block {
     display: flex;
-    gap: 16px;
-    margin-top: 10px;
+    gap: 14px;
+    margin-top: 5px;
   }
 
   .cyber-btn {
     flex: 1;
-    padding: 16px;
+    padding: 15px;
     font-family: 'Orbitron', sans-serif;
     font-size: 0.85rem;
     font-weight: 800;
@@ -353,7 +442,7 @@
 
   footer {
     border-top: 1px solid var(--border-dim);
-    padding: 24px 5vw;
+    padding: 20px 5vw;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.75rem;
     color: var(--text-muted);
@@ -369,86 +458,110 @@
 
   <header class="site-header">
     <div class="nav-logo">
-      UEG <span>//</span> SPEC-PAGE
+	<img src="logocompany.png" alt="United Enterprises Logo">
+      United Enterprises Group <span>|</span> Product specification interactive display
     </div>
-    <div class="status-tag">SYSTEM OK // SS316</div>
-    <a href="index.html" class="back-btn">[ ESC ] RETURN TO SYSTEM DIRECTORY</a>
+    
+    <a href="index.html" class="back-btn">Back</a>
   </header>
 
   <main class="cyber-wrapper">
     
-    <div class="viewport-stage">
+    <div class="viewport-stage" id="viewportStage">
       <div class="corner-bracket cb-tl"></div>
       <div class="corner-bracket cb-tr"></div>
       <div class="corner-bracket cb-bl"></div>
       <div class="corner-bracket cb-br"></div>
 
       <div class="hud-header">
-        <span id="drawingId">DRAWING ID: BV-2W-316</span>
-        <span>SCALE: 1:1 CYBER RENDER</span>
+        <span id="drawingId"></span>
+        <span></span>
       </div>
 
-      <div class="tube-render-area">
-        <div class="laser-scanner"></div>
+      <div class="hologram-container" id="holoContainer">
+        <div class="laser-scanner" id="laserScanner"></div>
 
-        <svg class="svg-blueprint" viewBox="0 0 380 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="110" y="80" width="160" height="90" rx="6" fill="#090d16" stroke="#00f0ff" stroke-width="2"/>
-          <rect x="125" y="95" width="130" height="60" rx="3" fill="#0e1320" stroke="#00f0ff" stroke-width="1.2" opacity="0.7"/>
+        <svg class="svg-blueprint" id="svgBlueprint" viewBox="0 0 380 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+          
+          <line class="flow-line" id="flowLine" x1="10" y1="145" x2="370" y2="145" stroke="#ff5533" stroke-width="4"/>
 
-          <rect x="172" y="45" width="36" height="35" fill="#090d16" stroke="#00f0ff" stroke-width="1.8"/>
-
-          <path id="valveHandle" d="M 120 25 L 260 25 L 250 45 L 130 45 Z" fill="#ff5533" stroke="#ff5533" stroke-width="1"/>
-          <circle cx="190" cy="35" r="5" fill="#020408" stroke="#00f0ff" stroke-width="1.5"/>
-
-          <rect x="50" y="102" width="60" height="46" fill="rgba(0,240,255,0.05)" stroke="#00f0ff" stroke-width="1.5"/>
-          <path d="M 110 90 L 80 100 L 80 150 L 110 160 Z" fill="#090d16" stroke="#00f0ff" stroke-width="2"/>
-
-          <rect x="270" y="102" width="60" height="46" fill="rgba(0,240,255,0.05)" stroke="#00f0ff" stroke-width="1.5"/>
-          <path d="M 270 90 L 300 100 L 300 150 L 270 160 Z" fill="#090d16" stroke="#00f0ff" stroke-width="2"/>
-
-          <g id="bottomPortGroup" opacity="0">
-            <rect x="167" y="170" width="46" height="50" fill="rgba(0,240,255,0.05)" stroke="#00f0ff" stroke-width="1.5"/>
-            <path d="M 155 170 L 165 195 L 215 195 L 225 170 Z" fill="#090d16" stroke="#00f0ff" stroke-width="2"/>
-            <line x1="190" y1="125" x2="190" y2="220" stroke="#ff5533" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <g class="handle-group part-node" onclick="inspectPart('HANDLE')" data-title="QUARTER-TURN ACTUATING LEVER" data-desc="Heavy-duty nylon coated stainless steel lever handle with directional indicator and travel stop pins.">
+            <rect x="120" y="25" width="140" height="12" rx="4" fill="#00f0ff" opacity="0.8"/>
+            <rect x="180" y="37" width="20" height="28" fill="#090d16" stroke="#00f0ff" stroke-width="1.5"/>
+            <circle cx="190" cy="31" r="3" fill="#ff5533"/>
+            <text x="130" y="34" fill="#020408" font-family="Orbitron" font-size="7" font-weight="900">LEVER HANDLE</text>
           </g>
 
-          <circle cx="190" cy="125" r="32" fill="#0e1320" stroke="#00f0ff" stroke-width="2"/>
-          <circle cx="190" cy="125" r="18" fill="#020408" stroke="#00f0ff" stroke-width="1.5"/>
+          <g class="stem-group part-node" onclick="inspectPart('STEM')" data-title="BLOWOUT-PROOF STEM & PACKING" data-desc="Bottom-loaded SS316 stem with live-loaded PTFE chevron packing rings to prevent stem leakage under pressure spikes.">
+            <rect x="183" y="65" width="14" height="40" fill="#090d16" stroke="#00f0ff" stroke-width="1.5"/>
+            <line x1="175" y1="75" x2="205" y2="75" stroke="#ff5533" stroke-width="1.5"/>
+            <line x1="175" y1="85" x2="205" y2="85" stroke="#00f0ff" stroke-width="1"/>
+            <text x="200" y="72" fill="#00f0ff" font-family="JetBrains Mono" font-size="6">STEM / PACKING</text>
+          </g>
 
-          <line id="horizFlow" x1="20" y1="125" x2="360" y2="125" stroke="#ff5533" stroke-width="2" stroke-dasharray="6 4"/>
+          <g class="body-group part-node" onclick="inspectPart('BODY')" data-title="FORGED SS316 VALVE BODY" data-desc="Heavy-wall barstock SS316 body tested for high pressure up to 10,000 PSI with zero wall porosity.">
+            <path d="M 130 105 L 250 105 L 265 145 L 250 185 L 130 185 L 115 145 Z" fill="#090d16" stroke="#00f0ff" stroke-width="2"/>
+            <rect x="160" y="98" width="60" height="12" fill="#0e1320" stroke="#00f0ff" stroke-width="1"/>
+          </g>
 
-          <rect x="150" y="102" width="8" height="46" fill="#ff5533"/>
-          <rect x="222" y="102" width="8" height="46" fill="#ff5533"/>
+          <g class="ball-group part-node" onclick="inspectPart('BALL')" data-title="FLOATING BALL & PEEK SEATS" data-desc="Micro-polished SS316 sphere with encapsulated PEEK seats providing bubble-tight shutoff against aggressive gases.">
+            <rect x="150" y="125" width="12" height="40" fill="#ff5533" stroke="#ff5533" stroke-width="0.5"/>
+            <rect x="218" y="125" width="12" height="40" fill="#ff5533" stroke="#ff5533" stroke-width="0.5"/>
+            <circle cx="190" cy="145" r="24" fill="#0e1320" stroke="#00f0ff" stroke-width="2"/>
+            <rect id="ballBore" x="166" y="138" width="48" height="14" fill="rgba(0,240,255,0.2)" stroke="#00f0ff" stroke-width="1"/>
+            <text x="176" y="147" fill="#00f0ff" font-family="Orbitron" font-size="6" font-weight="700">BORE</text>
+          </g>
+
+          <g class="left-port-group part-node" onclick="inspectPart('PORT_IN')" data-title="INLET END CONNECTION" data-desc="Integrated female NPT or double ferrule tube fitting inlet engineered for high torque tightening.">
+            <rect x="40" y="120" width="75" height="50" fill="rgba(0,240,255,0.05)" stroke="#00f0ff" stroke-width="1.8"/>
+            <line x1="60" y1="120" x2="60" y2="170" stroke="#00f0ff" stroke-width="1.2"/>
+            <line x1="80" y1="120" x2="80" y2="170" stroke="#00f0ff" stroke-width="1.2"/>
+            <text x="50" y="148" fill="#00f0ff" font-family="JetBrains Mono" font-size="7">INLET</text>
+          </g>
+
+          <g class="right-port-group part-node" onclick="inspectPart('PORT_OUT')" data-title="OUTLET END CONNECTION" data-desc="Matching high-pressure outlet port connection certified leak-free under hydro-testing.">
+            <rect x="265" y="120" width="75" height="50" fill="rgba(0,240,255,0.05)" stroke="#00f0ff" stroke-width="1.8"/>
+            <line x1="285" y1="120" x2="285" y2="170" stroke="#00f0ff" stroke-width="1.2"/>
+            <line x1="305" y1="120" x2="305" y2="170" stroke="#00f0ff" stroke-width="1.2"/>
+            <text x="280" y="148" fill="#00f0ff" font-family="JetBrains Mono" font-size="7">OUTLET</text>
+          </g>
+
         </svg>
+      </div>
 
-        <div class="measure-line">
-          <span id="portALabel">INLET: 1/2" OD TUBE</span>
-          <span id="centerTypeLabel">TYPE: 2-WAY STRAIGHT PASS</span>
-          <span id="portBLabel">OUTLET: 1/2" OD TUBE</span>
+      <div class="part-telemetry" id="telemetryBox">
+        <div>
+          <span class="telemetry-title" id="telemetryTitle">> CLICK ANY HOLOGRAM PART TO INSPECT</span>
+          <div class="telemetry-desc" id="telemetryDesc">..</div>
         </div>
+        <span style="color: var(--cyan); font-weight:700;"></span>
       </div>
 
-      <div class="hud-header">
-        <span>SEAT MATERIAL: ENCAPSULATED PEEK/PTFE</span>
-        <span>BODY: FORGED SS316</span>
+      <div class="hud-header" style="margin-top:12px;">
+        <div class="holo-toolbar">
+          <button class="tool-btn" id="btnExplode" onclick="toggleExplodedView()">[ EXPLODED VIEW ]</button>
+          <button class="tool-btn" id="btnFlow" onclick="toggleFlowSimulation()">[ SIMULATE FLOW ]</button>
+          <button class="tool-btn" id="btnReset" onclick="resetHologramView()">[ RESET VIEW ]</button>
+        </div>
+        <span id="sealingTechLabel" style="align-self: center;"></span>
       </div>
+
     </div>
 
     <div class="details-stage">
       <div>
-        <div class="sys-id">// PRODUCT CLASSIFICATION #05</div>
-        <h1 class="cyber-title">BALL VALVE (SS316)</h1>
+        <h1 class="cyber-title">HIGH PRESSURE BALL VALVES</h1>
       </div>
 
       <p class="cyber-desc">
-        Forged SS316 high-pressure instrumentation ball valves rated up to 6,000 PSI. Engineered with micro-polished encapsulated balls, blow-out proof stems, and quarter-turn low-torque handles for positive bi-directional flow shutoff in CNG and hydraulic control systems.
+        Forged SS316 stainless steel instrumentation ball valves. Built for bi-directional flow control and quick quarter-turn isolation in CNG priority panels, high-pressure gas cascades, hydraulic power packs, and industrial process plants across Nigeria.
       </p>
 
       <div>
         <div class="selector-label">> SELECT VALVE CONFIGURATION:</div>
         <div class="type-switchers">
-          <button class="type-btn active" onclick="switchValve('2way', this)">2-WAY STRAIGHT (6,000 PSI)</button>
-          <button class="type-btn" onclick="switchValve('3way', this)">3-WAY DIVERTER (L-PORT)</button>
+          <button class="type-btn active" onclick="switchValve('2way', this)">2-WAY INLINE (6,000 PSI)</button>
+          <button class="type-btn" onclick="switchValve('3way', this)">3-WAY PANEL MOUNT (10,000 PSI)</button>
         </div>
       </div>
 
@@ -458,70 +571,171 @@
           <div class="val" id="pressureVal">6,000 PSI</div>
         </div>
         <div class="metric-card">
+          <div class="title">Valve Type</div>
+          <div class="val" id="typeVal">2-Way Quarter Turn</div>
+        </div>
+        <div class="metric-card">
           <div class="title">Seat Material</div>
-          <div class="val" id="seatVal">Encapsulated PEEK</div>
+          <div class="val" id="seatVal">PEEK / PTFE Reinforced</div>
         </div>
         <div class="metric-card">
-          <div class="title">Stem Design</div>
-          <div class="val">Blow-out Proof Bottom Loaded</div>
-        </div>
-        <div class="metric-card">
-          <div class="title">Temp Tolerance</div>
-          <div class="val">-54°C to +232°C</div>
+          <div class="title">Temp Rating</div>
+          <div class="val" id="tempVal">-54°C to +232°C</div>
         </div>
       </div>
 
       <div class="action-block">
-        <a href="https://whatsform.com/lberoa" target="_blank" rel="noopener" class="cyber-btn btn-cyan">
+        <a href="https://whatsform.com/lberoa" target="_blank" rel="noopener" class="cyber-btn btn-cyan" onclick="playBeep()">
           INITIATE INQUIRY
         </a>
-        <a href="https://wa.me/919425055784?text=Hi%2C%20I%20want%20to%20inquire%20about%20SS316%20Ball%20Valves." target="_blank" rel="noopener" class="cyber-btn btn-wire">
-          WHATSAPP HQ
-        </a>
+        
       </div>
     </div>
 
   </main>
 
   <footer>
-    <div>TERMINAL STATUS: ONLINE</div>
-    <div>UNITED ENTERPRISES GROUP // NIGERIA INDUSTRIAL SUPPLY</div>
+    <div></div>
+    <div>UNITED ENTERPRISES GROUP | NIGERIA INDUSTRIAL SUPPLY</div>
   </footer>
 
   <script>
+    // Audio FX Synthesizer (Native Web Audio API)
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    
+    function playBeep(freq = 800, duration = 0.05) {
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      try {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.value = freq;
+        gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+      } catch (e) {}
+    }
+
+    // 3D Parallax Tilt Effect on Hologram Stage
+    const viewportStage = document.getElementById('viewportStage');
+    const holoContainer = document.getElementById('holoContainer');
+
+    viewportStage.addEventListener('mousemove', (e) => {
+      const rect = viewportStage.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      
+      const rotateX = (-y / rect.height) * 18;
+      const rotateY = (x / rect.width) * 18;
+
+      holoContainer.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+
+    viewportStage.addEventListener('mouseleave', () => {
+      holoContainer.style.transform = 'rotateX(0deg) rotateY(0deg)';
+    });
+
+    // Hologram Part Inspection
+    function inspectPart(partKey) {
+      playBeep(1200, 0.08);
+      const nodes = document.querySelectorAll('.part-node');
+      nodes.forEach(n => n.classList.remove('active-part'));
+
+      const telemetryTitle = document.getElementById('telemetryTitle');
+      const telemetryDesc = document.getElementById('telemetryDesc');
+
+      let targetNode = null;
+      if (partKey === 'HANDLE') targetNode = document.querySelector('.handle-group');
+      if (partKey === 'STEM') targetNode = document.querySelector('.stem-group');
+      if (partKey === 'BODY') targetNode = document.querySelector('.body-group');
+      if (partKey === 'BALL') targetNode = document.querySelector('.ball-group');
+      if (partKey === 'PORT_IN') targetNode = document.querySelector('.left-port-group');
+      if (partKey === 'PORT_OUT') targetNode = document.querySelector('.right-port-group');
+
+      if (targetNode) {
+        targetNode.classList.add('active-part');
+        telemetryTitle.innerText = '> ' + targetNode.getAttribute('data-title');
+        telemetryDesc.innerText = targetNode.getAttribute('data-desc');
+      }
+    }
+
+    // Exploded View Toggle
+    let isExploded = false;
+    function toggleExplodedView() {
+      playBeep(600, 0.1);
+      isExploded = !isExploded;
+      const btn = document.getElementById('btnExplode');
+      const container = document.getElementById('svgBlueprint');
+
+      if (isExploded) {
+        container.classList.add('exploded');
+        btn.classList.add('active-tool');
+      } else {
+        container.classList.remove('exploded');
+        btn.classList.remove('active-tool');
+      }
+    }
+
+    // Flow Simulation Toggle
+    let isFlowing = false;
+    function toggleFlowSimulation() {
+      playBeep(900, 0.1);
+      isFlowing = !isFlowing;
+      const btn = document.getElementById('btnFlow');
+      const container = document.getElementById('svgBlueprint');
+
+      if (isFlowing) {
+        container.classList.add('flow-active');
+        btn.classList.add('active-tool');
+      } else {
+        container.classList.remove('flow-active');
+        btn.classList.remove('active-tool');
+      }
+    }
+
+    // Reset Hologram View
+    function resetHologramView() {
+      playBeep(500, 0.05);
+      isExploded = false;
+      isFlowing = false;
+      const container = document.getElementById('svgBlueprint');
+      container.classList.remove('exploded', 'flow-active');
+      
+      document.getElementById('btnExplode').classList.remove('active-tool');
+      document.getElementById('btnFlow').classList.remove('active-tool');
+      document.querySelectorAll('.part-node').forEach(n => n.classList.remove('active-part'));
+
+      document.getElementById('telemetryTitle').innerText = '> CLICK ANY HOLOGRAM PART TO INSPECT';
+      document.getElementById('telemetryDesc').innerText = 'Hover over component vectors for real-time specification readouts.';
+    }
+
+    // Switch 2-Way / 3-Way Valve Mode
     function switchValve(type, btn) {
+      playBeep(1000, 0.08);
       document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
       const drawingId = document.getElementById('drawingId');
       const pressureVal = document.getElementById('pressureVal');
+      const typeVal = document.getElementById('typeVal');
       const seatVal = document.getElementById('seatVal');
-      const portALabel = document.getElementById('portALabel');
-      const portBLabel = document.getElementById('portBLabel');
-      const centerTypeLabel = document.getElementById('centerTypeLabel');
-      
-      const bottomPortGroup = document.getElementById('bottomPortGroup');
-      const horizFlow = document.getElementById('horizFlow');
+      const tempVal = document.getElementById('tempVal');
 
       if (type === '2way') {
-        drawingId.innerText = 'DRAWING ID: BV-2W-316';
+        drawingId.innerText = 'DRAWING ID: BV-2W-6K';
         pressureVal.innerText = '6,000 PSI';
-        seatVal.innerText = 'Encapsulated PEEK';
-        portALabel.innerText = 'INLET: 1/2" OD TUBE';
-        portBLabel.innerText = 'OUTLET: 1/2" OD TUBE';
-        centerTypeLabel.innerText = 'TYPE: 2-WAY STRAIGHT PASS';
-
-        bottomPortGroup.setAttribute('opacity', '0');
-        horizFlow.setAttribute('x2', '360');
+        typeVal.innerText = '2-Way Quarter Turn';
+        seatVal.innerText = 'PEEK / PTFE Reinforced';
+        tempVal.innerText = '-54°C to +232°C';
       } else {
-        drawingId.innerText = 'DRAWING ID: BV-3W-316';
-        pressureVal.innerText = '6,000 PSI';
-        seatVal.innerText = 'Reinforced PTFE';
-        portALabel.innerText = 'PORT A: 1/2" OD';
-        portBLabel.innerText = 'PORT B: 1/2" | BOTTOM: 1/2"';
-        centerTypeLabel.innerText = 'TYPE: 3-WAY DIVERTER';
-
-        bottomPortGroup.setAttribute('opacity', '1');
+        drawingId.innerText = 'DRAWING ID: BV-3W-10K';
+        pressureVal.innerText = '10,000 PSI';
+        typeVal.innerText = '3-Way Diverter (L-Bore)';
+        seatVal.innerText = 'Virgin PEEK High-Density';
+        tempVal.innerText = '-40°C to +260°C';
       }
     }
   </script>
