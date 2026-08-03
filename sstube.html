@@ -3,7 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stainless Steel Tubes|High-Pressure industrial fittings</title>
+
+<title>Interactive SS316 Seamless High-Pressure Tubing | United Enterprises Group</title>
+<meta name="title" content="SS316 Seamless Stainless Steel High-Pressure Tubing | United Enterprises Group">
+<meta name="description" content="Interactive 3D blueprint visualizer for SS316/316L seamless stainless steel instrumentation tubing. Rated for up to 10,000 PSI in high-pressure CNG dispenser cascades, hydraulic control systems, and chemical process piping in Nigeria.">
+<meta name="keywords" content="SS316 tubing, seamless stainless steel tube, high pressure CNG tubing Nigeria, instrumentation tube 1/2 OD, ASTM A269 tube, Swagelok compatible tube, interactive blueprint tube">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://unitedengineersgroup.work.gd/ss-tube.html">
+
+<meta property="og:type" content="product">
+<meta property="og:site_name" content="United Enterprises Group">
+<meta property="og:title" content="SS316 Seamless High-Pressure Instrumentation Tubing">
+<meta property="og:description" content="Interactive 3D blueprint for SS316/316L seamless tubing rated up to 10,000 PSI. Precision bright-annealed finish for zero-leak CNG and hydraulic installations.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "SS316 / SS316L Seamless Stainless Steel Instrumentation Tubing",
+  "description": "High-precision bright-annealed SS316/316L seamless tubing engineered according to ASTM A269 / A213 standards for CNG gas cascades and hydraulic control lines.",
+  "brand": { "@type": "Brand", "name": "United Enterprises Group" },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://unitedengineersgroup.work.gd/ss-tube.html",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,12 +41,14 @@
     --bg-void: #020408;
     --panel-cyber: #090d16;
     --panel-matte: #0e1320;
-    --border-dim: rgba(0, 240, 255, 0.12);
+    --border-dim: rgba(0, 240, 255, 0.15);
     --border-bright: #00f0ff;
     
     --cyan: #00f0ff;
-    --cyan-glow: rgba(0, 240, 255, 0.25);
+    --cyan-glow: rgba(0, 240, 255, 0.35);
     --orange: #ff5533;
+    --orange-glow: rgba(255, 85, 51, 0.4);
+    --green: #00ff88;
     
     --text-primary: #e6f1ff;
     --text-dim: #607b96;
@@ -34,7 +63,6 @@
     font-family: 'Space Grotesk', sans-serif;
     min-height: 100vh;
     overflow-x: hidden;
-    /* Cyber Grid Background Pattern */
     background-image: 
       linear-gradient(to right, rgba(0, 240, 255, 0.03) 1px, transparent 1px),
       linear-gradient(to bottom, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
@@ -43,7 +71,6 @@
 
   ::selection { background: var(--cyan); color: var(--bg-void); }
 
-  /* HUD Scanlines overlay */
   .scanline-overlay {
     position: fixed;
     top: 0; left: 0; width: 100vw; height: 100vh;
@@ -51,18 +78,18 @@
     background-size: 100% 4px;
     z-index: 99;
     pointer-events: none;
-    opacity: 0.6;
+    opacity: 0.5;
   }
 
-  /* Header Bar */
-  header {
+  /* Navigation Header */
+  .site-header {
     position: fixed;
-    top: 0; width: 100%;
+    top: 0; left: 0; width: 100%;
     z-index: 100;
-    background: rgba(2, 4, 8, 0.85);
-    backdrop-filter: blur(8px);
+    background: rgba(2, 4, 8, 0.9);
+    backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-dim);
-    padding: 16px 5vw;
+    padding: 12px 5vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -79,11 +106,37 @@
     gap: 12px;
   }
 
-  .nav-logo span {
-    color: var(--cyan);
+  .nav-logo img {
+    height: 50px;
+    width: 50px;
+    object-fit: contain;
   }
 
- 
+  .nav-logo span { color: var(--cyan); }
+
+  .status-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--cyan);
+    background: rgba(0, 240, 255, 0.08);
+    border: 1px solid var(--border-dim);
+    padding: 4px 10px;
+    border-radius: 2px;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .status-dot {
+    width: 6px; height: 6px;
+    background: var(--green);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--green);
+    animation: blink 1.5s infinite alternate;
+  }
+
+  @keyframes blink { 0% { opacity: 0.3; } 100% { opacity: 1; } }
 
   .back-btn {
     font-family: 'JetBrains Mono', monospace;
@@ -94,31 +147,34 @@
   }
   .back-btn:hover { color: var(--cyan); }
 
-  /* Main Container */
+  /* Main Container Layout */
   .cyber-wrapper {
-    max-width: 1350px;
-    margin: 110px auto 60px;
-    padding: 1 4vw;
-    
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 40px;
+    max-width: 1400px;
+    margin: 100px auto 60px;
+    padding: 0 3vw;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 35px;
   }
 
-  @media (max-width: 968px) {
+  @media (max-width: 1024px) {
     .cyber-wrapper { grid-template-columns: 1fr; margin-top: 80px; }
   }
 
-  /* Cyber Interactive Render Stage */
+  /* Left: Hologram Viewport Stage */
   .viewport-stage {
     background: var(--panel-cyber);
     border: 1px solid var(--border-dim);
     border-radius: 4px;
     position: relative;
-    padding: 40px;
+    padding: 30px;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 200px;
+    min-height: 560px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    perspective: 1000px;
+    overflow: hidden;
   }
 
   .corner-bracket {
@@ -126,93 +182,167 @@
     width: 12px; height: 12px;
     border-color: var(--cyan);
     border-style: solid;
+    pointer-events: none;
   }
   .cb-tl { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
   .cb-tr { top: -1px; right: -1px; border-width: 2px 2px 0 0; }
   .cb-bl { bottom: -1px; left: -1px; border-width: 0 0 2px 2px; }
   .cb-br { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
 
-  
+  .hud-header {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    z-index: 5;
+  }
 
-  /* Pure CSS Blueprint Cyber Tube Graphic */
-  .tube-render-area {
+  /* SVG Interactive Blueprint Canvas */
+  .hologram-container {
     position: relative;
     width: 100%;
-    height: 240px;
+    height: 330px;
     margin: auto 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.15s ease-out;
+    transform-style: preserve-3d;
   }
 
-  .cyber-tube-wireframe {
-    width: 85%;
-    height: 70px;
-    background: linear-gradient(180deg, 
-      rgba(0, 240, 255, 0.2) 0%, 
-      rgba(2, 4, 8, 0.9) 40%, 
-      rgba(0, 240, 255, 0.25) 100%);
-    border-top: 2px solid var(--cyan);
-    border-bottom: 2px solid var(--cyan);
-    position: relative;
-    box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
+  .svg-blueprint {
+    width: 100%;
+    max-width: 460px;
+    height: auto;
+    filter: drop-shadow(0 0 15px rgba(0, 240, 255, 0.25));
   }
 
+  /* Hologram Part Interactivity */
+  .part-node {
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .part-node:hover, .part-node.active-part {
+    stroke: var(--orange) !important;
+    fill: rgba(255, 85, 51, 0.25) !important;
+    filter: drop-shadow(0 0 10px var(--orange));
+  }
+
+  /* Multi-Axis Exploded View Animations for SS Tube Cross-Section */
+  .exploded .wall-top-group { transform: translateY(-28px); transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .exploded .wall-bottom-group { transform: translateY(28px); transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .exploded .bore-group { transform: scaleY(1.1); transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
+
+  .wall-top-group, .wall-bottom-group, .bore-group, .end-cap-group { 
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); 
+  }
+
+  /* Hologram Scanner Line */
   .laser-scanner {
     position: absolute;
-    top: -15px; bottom: -15px;
+    top: 5px; bottom: 5px;
     width: 2px;
-    background: var(--orange);
-    box-shadow: 0 0 12px var(--orange);
-    animation: scanAnimation 3s infinite ease-in-out;
+    background: var(--cyan);
+    box-shadow: 0 0 15px var(--cyan);
+    animation: scanAnimation 4s infinite ease-in-out;
+    pointer-events: none;
+    opacity: 0.7;
   }
 
   @keyframes scanAnimation {
-    0% { left: 0%; opacity: 0; }
-    15% { opacity: 1; }
-    85% { opacity: 1; }
-    100% { left: 100%; opacity: 0; }
+    0% { left: 5%; opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { left: 95%; opacity: 0.2; }
   }
 
-  .measure-line {
-    position: absolute;
-    bottom: -35px; left: 0; width: 100%;
-    border-bottom: 1px dashed var(--text-dim);
+  /* Flow Vector Line */
+  .flow-line {
+    stroke-dasharray: 8, 6;
+    animation: flowMove 1s linear infinite;
+    display: none;
+  }
+  .flow-active .flow-line { display: block; }
+
+  @keyframes flowMove {
+    0% { stroke-dashoffset: 28; }
+    100% { stroke-dashoffset: 0; }
+  }
+
+  /* Controls Overlay Bar */
+  .holo-toolbar {
     display: flex;
-    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+    z-index: 10;
+  }
+
+  .tool-btn {
+    background: var(--panel-matte);
+    border: 1px solid var(--border-dim);
+    color: var(--text-primary);
+    padding: 6px 12px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.7rem;
-    color: var(--cyan);
-    padding-top: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
   }
 
-  /* Right Side: Product Details */
+  .tool-btn:hover, .tool-btn.active-tool {
+    background: rgba(0, 240, 255, 0.15);
+    border-color: var(--cyan);
+    color: var(--cyan);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+  }
+
+  /* Live Telemetry Display Popover */
+  .part-telemetry {
+    background: rgba(9, 13, 22, 0.95);
+    border: 1px solid var(--orange);
+    padding: 10px 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-primary);
+    box-shadow: 0 0 20px rgba(255, 85, 51, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 44px;
+  }
+
+  .telemetry-title { color: var(--orange); font-weight: 700; }
+  .telemetry-desc { color: var(--text-dim); }
+
+  /* Right Side: Technical Specs & Controls */
   .details-stage {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 22px;
   }
 
-  
+  .sys-id {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--orange);
+    letter-spacing: 2px;
+  }
 
   .cyber-title {
     font-family: 'Orbitron', sans-serif;
-    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
     font-weight: 900;
     text-transform: uppercase;
     line-height: 1.1;
     letter-spacing: 1px;
-	padding: 20px;
   }
 
   .cyber-desc {
     color: var(--text-dim);
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 1.6;
     font-weight: 300;
   }
 
-  /* Dynamic Selector Tabs */
   .selector-label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.75rem;
@@ -221,12 +351,12 @@
     margin-bottom: 8px;
   }
 
-  .size-switchers {
+  .type-switchers {
     display: flex;
-    gap: 12px;
+    gap: 10px;
   }
 
-  .size-btn {
+  .type-btn {
     flex: 1;
     background: var(--panel-cyber);
     border: 1px solid var(--border-dim);
@@ -234,58 +364,56 @@
     padding: 12px;
     font-family: 'JetBrains Mono', monospace;
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 0.78rem;
     cursor: pointer;
     transition: all 0.2s;
     text-align: center;
   }
 
-  .size-btn.active, .size-btn:hover {
+  .type-btn.active, .type-btn:hover {
     background: rgba(0, 240, 255, 0.1);
     border-color: var(--cyan);
     color: var(--cyan);
     box-shadow: 0 0 15px rgba(0, 240, 255, 0.15);
   }
 
-  /* Grid Metrics Panel */
+  /* HUD Metrics Grid */
   .hud-metrics {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-top: 10px;
+    gap: 10px;
   }
 
   .metric-card {
     background: var(--panel-matte);
     border: 1px solid var(--border-dim);
-    padding: 14px 18px;
+    padding: 12px 16px;
   }
 
   .metric-card .title {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.68rem;
+    font-size: 0.65rem;
     color: var(--text-dim);
     text-transform: uppercase;
   }
 
   .metric-card .val {
     font-family: 'Orbitron', sans-serif;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 600;
     color: var(--text-primary);
     margin-top: 4px;
   }
 
-  /* Cyber CTA Buttons */
   .action-block {
     display: flex;
-    gap: 16px;
-    margin-top: 10px;
+    gap: 14px;
+    margin-top: 5px;
   }
 
   .cyber-btn {
     flex: 1;
-    padding: 16px;
+    padding: 15px;
     font-family: 'Orbitron', sans-serif;
     font-size: 0.85rem;
     font-weight: 800;
@@ -306,12 +434,19 @@
     box-shadow: 0 0 25px rgba(0, 240, 255, 0.5);
   }
 
- 
+  .btn-wire {
+    background: transparent;
+    border: 1px solid var(--border-dim);
+    color: var(--text-primary);
+  }
+  .btn-wire:hover {
+    border-color: var(--cyan);
+    color: var(--cyan);
+  }
 
-  /* Footer */
   footer {
     border-top: 1px solid var(--border-dim);
-    padding: 24px 5vw;
+    padding: 20px 5vw;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.75rem;
     color: var(--text-muted);
@@ -325,78 +460,115 @@
 
   <div class="scanline-overlay"></div>
 
-  <header>
+  <header class="site-header">
     <div class="nav-logo">
-      United Enterprises Group <span>|</span> Product specification and detail
+      <img src="logocompany.png" alt="United Enterprises Logo">
+      United Enterprises Group <span>|</span> Product specifications interactive display
     </div>
+   
     <a href="index.html" class="back-btn">Back</a>
   </header>
 
   <main class="cyber-wrapper">
     
-    <div class="viewport-stage">
+    <div class="viewport-stage" id="viewportStage">
       <div class="corner-bracket cb-tl"></div>
       <div class="corner-bracket cb-tr"></div>
       <div class="corner-bracket cb-bl"></div>
       <div class="corner-bracket cb-br"></div>
 
- 
+      <div class="hologram-container" id="holoContainer">
+        <div class="laser-scanner" id="laserScanner"></div>
 
-      <div class="tube-render-area">
-        <div class="cyber-tube-wireframe" id="tubeGraphic">
-          <div class="laser-scanner"></div>
-          <div class="measure-line">
-            <span>|<br>0.0mm</span>
-            <span id="odLabel">OD: 3/4" (19.05mm)</span>
-            <span>|<br>6000mm</span>
-          </div>
+        <svg class="svg-blueprint" id="svgBlueprint" viewBox="0 0 380 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+          
+          <line class="flow-line" id="flowLine" x1="10" y1="120" x2="370" y2="120" stroke="#ff5533" stroke-width="4"/>
+
+          <g class="wall-top-group part-node" onclick="inspectPart('WALL_TOP')" data-title="SS316 HEAVY PRECISION WALL" data-desc="Seamless cold-drawn SS316 wall with strictly controlled outer diameter tolerance (+/-0.003 in) and high burst pressure capacity.">
+            <rect x="40" y="70" width="300" height="20" fill="#090d16" stroke="#00f0ff" stroke-width="1.8"/>
+            <line x1="40" y1="80" x2="340" y2="80" stroke="#00f0ff" stroke-width="1" stroke-dasharray="6 3" opacity="0.6"/>
+            <line x1="200" y1="70" x2="200" y2="90" stroke="#ff5533" stroke-width="1.5"/>
+            <text x="205" y="83" fill="#ff5533" font-family="JetBrains Mono" font-size="7">WALL</text>
+          </g>
+
+          <g class="bore-group part-node" onclick="inspectPart('BORE')" data-title="MICRO-HONED INNER BORE" data-desc="Ultra-smooth internal bore finish (Ra ≤ 0.5 µm) minimizing particulate entrapment and fluid friction loss.">
+            <rect x="40" y="90" width="300" height="60" fill="rgba(0,240,255,0.06)" stroke="#00f0ff" stroke-width="1.2" stroke-dasharray="4 2"/>
+            <line x1="10" y1="120" x2="370" y2="120" stroke="#00f0ff" stroke-width="1" stroke-dasharray="10 5"/>
+            <text x="160" y="111" fill="#00f0ff" font-family="Orbitron" font-size="7" font-weight="700">SMOOTH BORE / CROSS SECTION</text>
+          </g>
+
+          <g class="wall-bottom-group part-node" onclick="inspectPart('WALL_BOTTOM')" data-title="BRIGHT ANNEALED BASE MATRIX" data-desc="Fully bright annealed material with hardness rating below 80 HRB ensuring perfect ferrule bite without galling.">
+            <rect x="40" y="150" width="300" height="20" fill="#090d16" stroke="#00f0ff" stroke-width="1.8"/>
+            <line x1="40" y1="160" x2="340" y2="160" stroke="#00f0ff" stroke-width="1" stroke-dasharray="6 3" opacity="0.6"/>
+          </g>
+
+          <g class="end-cap-group part-node" onclick="inspectPart('PROFILE_LEFT')" data-title="PRECISION TUBE END CHAMFER" data-desc="Square-cut and deburred tube end geometry ready for double-ferrule compression fitting insertion.">
+            <ellipse cx="40" cy="120" rx="15" ry="50" fill="#0e1320" stroke="#00f0ff" stroke-width="2"/>
+            <ellipse cx="40" cy="120" rx="8" ry="30" fill="#020408" stroke="#00f0ff" stroke-width="1.5"/>
+            <text x="18" y="115" fill="#00f0ff" font-family="JetBrains Mono" font-size="6">Outer Diameter (O.D.)</text>
+          </g>
+
+          <g class="end-cap-group part-node" onclick="inspectPart('PROFILE_RIGHT')" data-title="RIGHT TUBE SECTION PROFILE" data-desc="Seamless construction according to ASTM A269 / A213 standards, 100% eddy-current leak tested.">
+            <ellipse cx="340" cy="120" rx="15" ry="50" fill="#0e1320" stroke="#00f0ff" stroke-width="2"/>
+            <ellipse cx="340" cy="120" rx="8" ry="30" fill="#020408" stroke="#00f0ff" stroke-width="1.5"/>
+          </g>
+
+        </svg>
+      </div>
+
+      <div class="part-telemetry" id="telemetryBox">
+        <div>
+          <span class="telemetry-title" id="telemetryTitle">> CLICK ANY TUBE SECTION TO INSPECT</span>
+          <div class="telemetry-desc" id="telemetryDesc">..</div>
         </div>
       </div>
-	  
+
+      <div class="hud-header" style="margin-top:12px;">
+        <div class="holo-toolbar">
+          <button class="tool-btn" id="btnExplode" onclick="toggleExplodedView()">[ EXPLODED VIEW ]</button>
+          <button class="tool-btn" id="btnFlow" onclick="toggleFlowSimulation()">[ SIMULATE FLOW ]</button>
+          <button class="tool-btn" id="btnReset" onclick="resetHologramView()">[ RESET VIEW ]</button>
+        </div>
+      </div>
+
     </div>
 
     <div class="details-stage">
       <div>
-        <h1 class="cyber-title">SEAMLESS Stainless Steel(SS) TUBE</h1>
+        <h1 class="cyber-title">SEAMLESS Stainless Steel TUBING</h1>
       </div>
 
       <p class="cyber-desc">
-        United Enterprises is a trusted supplier and exporter of High Pressure Stainless Steel Tubes engineered to deliver exceptional performance in demanding industrial environments. Manufactured from premium-grade stainless steel, our tubes are designed to withstand extreme pressure, high temperatures, corrosion, and aggressive chemical exposure while maintaining superior mechanical strength and dimensional accuracy. These tubes are widely used in hydraulic systems, instrumentation lines, oil & gas installations, chemical processing plants, power generation facilities, pharmaceutical industries, marine applications, food processing, and high-pressure fluid transfer systems.
+     Our premium high-pressure stainless steel tubing is engineered to deliver maximum durability and safety in extreme industrial environments. Manufactured from superior 316 SS grade, this seamless tubing provides exceptional resistance to corrosion, rust, and chemical degradation. It easily withstands ultra-high stress levels, making it ideal for hydraulic lines, oil and gas transport, and chemical processing. The precision-bore design ensures smooth fluid flow, prevents scaling, and guarantees leak-free performance under pressure ratings exceeding 10,000 PSI. Upgrade your fluid handling systems with reliable, low-maintenance piping built for the most demanding operations.
       </p>
-	  <p class = "cyber-desc">At United Enterprises, we combine premium product quality with competitive pricing, timely delivery, and dedicated customer support. Our experienced team assists clients in selecting the ideal tubing specifications based on operating pressure, temperature, corrosion resistance, and industry standards. We serve customers across multiple industrial sectors with customized solutions, ensuring every project receives products that meet stringent performance and safety requirements.</p>
 
       <div>
-        <div class="selector-label">> SELECT OUTER DIAMETER [OD]:</div>
-        <div class="size-switchers">
-          <button class="size-btn active" onclick="switchSize('3/4', this)">3/4" INCH (19.05mm)</button>
-          <button class="size-btn" onclick="switchSize('1/2', this)">1/2" INCH (12.70mm)</button>
+        <div class="selector-label">> SELECT TUBING SIZE SPECIFICATION:</div>
+        <div class="type-switchers">
+          <button class="type-btn active" onclick="switchTube('12OD', this)">1/2" Outer Diameter (1.24mm Wall)</button>
+          <button class="type-btn" onclick="switchTube('38OD', this)">3/4" Outer Diameter (0.89mm Wall)</button>
         </div>
       </div>
 
       <div class="hud-metrics">
         <div class="metric-card">
-          <div class="title">Max Working Pressure</div>
-          <div class="val" id="pressureVal">4,200 PSI</div>
+          <div class="title">Max Pressure Rating</div>
+          <div class="val" id="pressureVal">6,500 PSI</div>
         </div>
         <div class="metric-card">
-          <div class="title">Wall Thickness (WT)</div>
-          <div class="val" id="wallVal">0.065" (1.65mm)</div>
+          <div class="title">Material Grade</div>
+          <div class="val" id="gradeVal">SS316</div>
         </div>
         <div class="metric-card">
-          <div class="title">Micro Finish (Ra)</div>
-          <div class="val">≤ 0.4 µm Matte</div>
-        </div>
-        <div class="metric-card">
-          <div class="title">Hardness Index</div>
-          <div class="val">≤ 80 HRB</div>
+          <div class="title">Hardness Rating</div>
+          <div class="val" id="hardnessVal">≤ 95 HRB (Soft Annealed)</div>
         </div>
       </div>
 
       <div class="action-block">
-        <a href="https://whatsform.com/lberoa" target="_blank" class="cyber-btn btn-cyan">
+        <a href="https://whatsform.com/lberoa" target="_blank" rel="noopener" class="cyber-btn btn-cyan" onclick="playBeep()">
           INITIATE INQUIRY
         </a>
-        
       </div>
     </div>
 
@@ -407,26 +579,134 @@
   </footer>
 
   <script>
-    /* Interactive metric updates on size selection */
-    function switchSize(size, btn) {
-      document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+    // Audio FX Synthesizer (Native Web Audio API)
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    
+    function playBeep(freq = 800, duration = 0.05) {
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      try {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.value = freq;
+        gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+      } catch (e) {}
+    }
+
+    // 3D Parallax Tilt Effect on Hologram Stage
+    const viewportStage = document.getElementById('viewportStage');
+    const holoContainer = document.getElementById('holoContainer');
+
+    viewportStage.addEventListener('mousemove', (e) => {
+      const rect = viewportStage.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      
+      const rotateX = (-y / rect.height) * 18;
+      const rotateY = (x / rect.width) * 18;
+
+      holoContainer.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+
+    viewportStage.addEventListener('mouseleave', () => {
+      holoContainer.style.transform = 'rotateX(0deg) rotateY(0deg)';
+    });
+
+    // Hologram Part Inspection
+    function inspectPart(partKey) {
+      playBeep(1200, 0.08);
+      const nodes = document.querySelectorAll('.part-node');
+      nodes.forEach(n => n.classList.remove('active-part'));
+
+      const telemetryTitle = document.getElementById('telemetryTitle');
+      const telemetryDesc = document.getElementById('telemetryDesc');
+
+      let targetNode = null;
+      if (partKey === 'WALL_TOP') targetNode = document.querySelector('.wall-top-group');
+      if (partKey === 'BORE') targetNode = document.querySelector('.bore-group');
+      if (partKey === 'WALL_BOTTOM') targetNode = document.querySelector('.wall-bottom-group');
+      if (partKey === 'PROFILE_LEFT' || partKey === 'PROFILE_RIGHT') targetNode = document.querySelector('.end-cap-group');
+
+      if (targetNode) {
+        targetNode.classList.add('active-part');
+        telemetryTitle.innerText = '> ' + targetNode.getAttribute('data-title');
+        telemetryDesc.innerText = targetNode.getAttribute('data-desc');
+      }
+    }
+
+    // Exploded View Toggle (Longitudinal Cross Section Split)
+    let isExploded = false;
+    function toggleExplodedView() {
+      playBeep(600, 0.1);
+      isExploded = !isExploded;
+      const btn = document.getElementById('btnExplode');
+      const container = document.getElementById('svgBlueprint');
+
+      if (isExploded) {
+        container.classList.add('exploded');
+        btn.classList.add('active-tool');
+      } else {
+        container.classList.remove('exploded');
+        btn.classList.remove('active-tool');
+      }
+    }
+
+    // Flow Simulation Toggle
+    let isFlowing = false;
+    function toggleFlowSimulation() {
+      playBeep(900, 0.1);
+      isFlowing = !isFlowing;
+      const btn = document.getElementById('btnFlow');
+      const container = document.getElementById('svgBlueprint');
+
+      if (isFlowing) {
+        container.classList.add('flow-active');
+        btn.classList.add('active-tool');
+      } else {
+        container.classList.remove('flow-active');
+        btn.classList.remove('active-tool');
+      }
+    }
+
+    // Reset Hologram View
+    function resetHologramView() {
+      playBeep(500, 0.05);
+      isExploded = false;
+      isFlowing = false;
+      const container = document.getElementById('svgBlueprint');
+      container.classList.remove('exploded', 'flow-active');
+      
+      document.getElementById('btnExplode').classList.remove('active-tool');
+      document.getElementById('btnFlow').classList.remove('active-tool');
+      document.querySelectorAll('.part-node').forEach(n => n.classList.remove('active-part'));
+
+      document.getElementById('telemetryTitle').innerText = '> CLICK ANY TUBE SECTION TO INSPECT';
+      document.getElementById('telemetryDesc').innerText = 'Hover over component vectors for real-time specification readouts.';
+    }
+
+    // Switch Tube Outer Diameter Mode
+    function switchTube(type, btn) {
+      playBeep(1000, 0.08);
+      document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
-      const pressure = document.getElementById('pressureVal');
-      const wall = document.getElementById('wallVal');
-      const odLabel = document.getElementById('odLabel');
-      const tubeGraphic = document.getElementById('tubeGraphic');
+      const drawingId = document.getElementById('drawingId');
+      const pressureVal = document.getElementById('pressureVal');
+      const hardnessVal = document.getElementById('hardnessVal');
 
-      if (size === '3/4') {
-        pressure.innerText = '4,200 PSI';
-        wall.innerText = '0.065" (1.65mm)';
-        odLabel.innerText = 'OD: 3/4" (19.05mm)';
-        tubeGraphic.style.height = '70px';
+      if (type === '12OD') {
+        if(drawingId) drawingId.innerText = 'DRAWING ID: TUBE-316-12OD';
+        pressureVal.innerText = '6,500 PSI';
+        hardnessVal.innerText = '≤ 80 HRB (Soft Annealed)';
       } else {
-        pressure.innerText = '5,100 PSI';
-        wall.innerText = '0.049" (1.24mm)';
-        odLabel.innerText = 'OD: 1/2" (12.70mm)';
-        tubeGraphic.style.height = '48px';
+        if(drawingId) drawingId.innerText = 'DRAWING ID: TUBE-316-38OD';
+        pressureVal.innerText = '7,800 PSI';
+        hardnessVal.innerText = '≤ 75 HRB (Soft Annealed)';
       }
     }
   </script>
